@@ -1,0 +1,153 @@
+.signup {
+  background-color: #F0EFE9;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 100px;
+  
+  @media (min-width: 576px) {
+    background-color: #F0EFE9;
+    height: 14rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 0px;
+  }
+
+  .m-detail {
+    display: none;
+    
+    @media (min-width: 576px) { 
+      display: block;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right:0;
+    }
+  }
+
+  .container{
+    display: block;
+    
+    @media (min-width: 576px) { 
+      display: flex;
+      gap: 190px;
+     }
+    
+    .left {
+
+      h3 {
+        font-family: 'DM Sans', sans-serif; 
+        font-weight: 800; 
+        font-size: 25px;
+        color: #191919;
+        margin-bottom: 40px;
+      }
+
+      @media (min-width: 576px) {
+        
+        h3 { 
+        font-size: 40px;
+        margin-bottom: 0px;
+        }
+       }
+      }
+
+    .right {
+      
+      .searchbar-plus-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        @media (min-width: 576px) { 
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .searchbox {
+          display: inline-block;
+          margin-right: 10px;
+          border-radius: 25px;
+
+          input {
+            border: solid 1px rgb(192, 192, 192);
+            text-align: center;
+            font-size: 5px;
+            outline: none;
+          }
+
+          #email {
+            border-radius: 25px; /* Rundade kanter */
+            padding: 8px 8px 8px 0;
+            font-size: 16px; /* Ange textstorlek */
+          }
+
+          #email::placeholder {
+            color: #999; /* Grå färg för plachållartexten */
+            font-style: italic; /* Kursiv stil för plachållartexten */
+            font-size: 15px;
+          }
+           
+          @media (min-width: 576px) {  
+            display: flex;
+            border-radius: 25px;
+
+            input {
+              border: none;
+            }
+            
+            #email {
+              padding: 14px 80px 14px 40px; /* Lägg till lite utrymme runt texten */
+              border: none;
+            }
+
+            #email::placeholder {
+              font-size: 17px;
+            }  
+          }   
+        }
+
+        .btn-subscribe {
+          
+          .subscribe {
+            background-color: #F9D783;
+            border: solid 1px #F9D783 ;
+            color: #191919; 
+            text-decoration: none; 
+            padding: 10px 8px 12px 16px; 
+            font-weight: 500; 
+            font-size: 13px; 
+            border-radius: 30px;
+            border-color: #e2c67e;
+            
+            i {
+              margin: 8px; 
+              font-size: 0.9em;
+              font-weight: 700;
+            }
+
+            @media (min-width: 576px) {  
+              background-color: #F9D783;
+              border: solid 1px #F9D783 ;
+              color: #191919; 
+              text-decoration: none; 
+              padding: 15px 28px; 
+              font-weight: 500; 
+              font-size: 16px; 
+              border-radius: 30px;
+             
+              &:hover { 
+                background-color: #191919; 
+                border: 1px solid #191919; 
+                color: #F0EFE9;
+              }
+            }
+          }
+        }
+      }
+    } 
+  }
+}

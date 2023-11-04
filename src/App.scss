@@ -1,0 +1,3007 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,900&display=swap');
+@import './assets/scss/sections/Header'; //allt som skrivs i header importeras in hit
+@import './assets/scss/sections/ArticleandnewsBox';
+@import './assets//scss/sections/NewsBody';
+@import './assets//scss/sections/OverblacknavSectionNews';
+@import './assets//scss/sections/FooterSectionNews';
+@import './assets/scss/sections/BlacknavigationNews';
+@import './assets/scss/sections/ServicesBody';
+@import './assets/scss/sections/ServicesGreyButton';
+@import './assets/scss/sections/SearchbarServices';
+@import './assets/scss/sections/ServicesRight';
+@import './assets/scss/sections/TitleRightSection';
+* {
+  box-sizing: border-box;
+}
+
+ //@media (min-width: 576px) { ... }
+html, body { /*All text blir till denna färg */
+  color: #191919;
+  font-family: 'Inter', sans-serif; /*Textsnitt */
+  font-size: 16px; /*storleken på texten */
+  font-weight: 400; /*hur stark färgen blir */
+
+}
+
+
+.btn-black {
+  background-color: #191919;
+  border: solid 1px #191919;
+  color: #ffffff; /*Textens färg */
+  text-decoration: none; /*vi tar bort strecket under texten Login */
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; /*här får vi tjockare text */
+  font-size: 14px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+  border-radius: 30px;
+  padding: 16px 25px;
+
+  i {
+    margin: 8px; /*skapar avstånd mellan ikonen (pilen) och texten */
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  &:hover { /*fixa denna biten sen */
+    background-color: #191919; /*När vi går över med musen så blir bakgrundsfärgen svart */
+    border: 1px solid #191919; /*bordern blir också svart då den var gul innan*/
+    color: #F0EFE9; /* text färgen går över från svart till vit (obs! lite mjukare vit) */
+  }
+}
+
+.btn-yellow {
+  background-color: #F9D783;
+  border: solid 1px #F9D783 ;
+  color: #191919; /*Textens färg */
+  text-decoration: none; /*vi tar bort strecket under texten Login */
+  padding: 10px 20px; /*Här är det som att säga padding-top och bottom:8px, samt padding-top och bottom: 25px */
+  font-weight: 500; /*här får vi tjockare text */
+  font-size: 16px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+  border-radius: 30px;
+  
+  i {
+    margin: 8px; /*skapar avstånd mellan ikonen (pilen) och texten */
+    font-size: 0.9em;
+    font-weight: 700;
+  }
+
+  &:hover { 
+    background-color: #191919; /*När vi går över med musen så blir bakgrundsfärgen svar */
+    border: 1px solid #191919; /*bordern blir också svart då den var gul innan*/
+    color: #F0EFE9; /* text färgen går över från svart till vit (obs! lite mjukare vit) */
+  }
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: solid 1px black;
+  color: #191919; /*Textens färg */
+  text-decoration: none; /*vi tar bort strecket under texten Login */
+  padding: 10px 20px; /*Här är det som att säga padding-top och bottom:8px, samt padding-top och bottom: 25px */
+  font-weight: 500; /*här får vi tjockare text */
+  font-size: 16px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+  border-radius: 30px;
+
+  i {
+    margin: 8px; /*skapar avstånd mellan ikonen (pilen) och texten */
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+
+  &:hover { 
+    background-color: #191919; /*När vi går över med musen så blir bakgrundsfärgen svar */
+    border: 1px solid #191919; /*bordern blir också svart då den var gul innan*/
+    color: #F0EFE9; /* text färgen går över från svart till vit (obs! lite mjukare vit) */
+  }
+}
+
+.btn-go-to {
+  position: absolute;
+  background-color: #191919;
+  border: solid 1px black;
+  color: #191919; /*Textens färg */
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  margin-left: 200px;
+  margin-top: 18px;
+
+  i {
+    position: absolute;
+    color: white;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: 390;
+    transform: translate(-20%, -0%); /* Centrera ikonen helt och hållet */
+  }
+}
+
+.btn-yellow-box {
+  position: absolute;
+  background-color: #ffffff;
+  border: solid 1px rgb(255, 255, 255);
+  color: #191919; /*Textens färg */
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  margin-left: 200px;
+  margin-top: 18px;
+
+  i {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: 400;
+    transform: translate(-20%, -0%); /* Centrera ikonen helt och hållet */
+  }
+}
+
+.section-title {
+  p {
+    color: rgb(249, 77, 28);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  h2 {
+    font-family: 'DM Sans', sans-serif; /*kopierar du under import delen på fonts.google.com */
+    font-weight: 700; /*kolla design mallen och hämta från fonts.google.com */
+    font-size: 45px;
+    color: #191919;
+  }
+}
+
+header {
+  background-color: #F0EFE9;
+  padding: 16px;
+  margin-bottom: -50px;
+
+  .container {
+    display: flex;
+    align-items: center; /*Här centrerar du sakerna i container
+    i detta faller flyttades bara meny ikonen, varför? */
+    justify-content: space-between; /*nu kommer bilden och ikonen separeras ifrån varandra
+    och gå åt varsitt håll. */
+    gap: 70px;
+
+    .crito {
+      margin-top: 0;
+      padding-bottom: 100px;
+      }
+
+    .menu-bars {
+      border: none;
+      font-size: 25px;
+      background-color: transparent;
+      margin-bottom: 80px;
+
+      @media (min-width: 992px) {
+      display: none;
+      }
+    }
+
+    .menu { 
+    display: none;
+    flex: 1;
+
+    @media (min-width: 992px) {
+    display: block;
+    }
+
+      .top-menu {
+        display: flex;
+        justify-content: end;
+        border-bottom: 1px solid #DAD9D3; /*Här har vi lagt bordern och 
+        padding för att få bordern att gå ut hela vägen*/
+        padding-bottom: 10px;
+        align-items: center; /* om inte denna finns så kommer contact information biten att vara i en annan nivå i förhållande
+        till social-media ikonerna. Align items centrerar dem i mitten av boxen vertikalt. */
+        margin-bottom: 80px;
+    
+        @media (min-width: 1200px) { /*Närvi kommer över en 1200px så vill vi: */
+        justify-content: space-between; /*ha en space between så att sociala medier knapparna hamnar längst ut */
+        }
+
+        .contact-information {
+          display: none;
+          align-items: center;
+
+          @media (min-width: 1200px) { /*När vi kommer över en 1200px så vill vi: */
+            display: flex; /*vi vill att contact-information delen ska vara flexad, dvs att elementen sätter sig bredvid varandra.
+            hade man skrivit display:block; då hade de hamnat under varandra. */
+            justify-content: space-between; /*ha en space between så att sociala medier knapparna hamnar längst ut */
+          }
+
+          .content-box {
+            padding-right: 30px; /*justerar hur långt ifrån texten den här
+            sidan av ramen ska vara*/
+            margin-right: 30px;
+            border-right: 1px solid #DAD9D3; /* skapar en sida
+            av en ram till höger om allt som finns i content-box klassen */
+            font-family: 'Inter', sans-serif; /*Textsnitt */
+            font-size: 15px; /*storleken på texten */
+            font-weight: 300; /*hur stark färgen blir */
+
+              i { /*egenskaper till ikonerna*/
+                margin-right: 5px;
+                font-size: 1.2em;/*när man skriver "1em" så betyder det
+                att ge mig samma storlek som min parent, vilket blir 15px i detta fallet, skriver
+                man 1.2 så blir det lite större än parentsens storlek osv. */ 
+              }
+
+              &.last { /*för att targeta klassen last som
+              är i höjd med de andra klasserna "content-box" så måste du 
+              sätta dit ett "&" */ 
+                border: none; /* nu tar vi bort den sista ram sidan på just denna klassen specifikt */   
+              }
+            }
+          }
+
+        .social-media {
+          #linked { /*skapar ett id för att just sista linkedin ikonen ska ligga
+          sida vid sida med borderns slut*/
+          margin-right: 0;
+          }
+
+          a {
+            color: #191919;
+            font-size: 1.3rem; /*Man vill inte ha för små ikoner för att de ska gå att trycka på rem
+            utgår från font sizen i html och body delen, och 1,3 rem betyder att öka upp med 30%
+            från det vi satt i html och body delen vilket är 16 px (tror det betyder det)*/ 
+            margin-right: 10px;
+          
+            &:hover { /*När vi drar med musen över ikonerna så kommer
+            dem att ändra färg. */
+            color: #666666;
+            }
+          }
+        }   
+      }
+
+    .main-menu {
+      display: flex; /*Så att varje text "home", "service" etc kan sättas bredvid varandra */
+      justify-content: space-between; /*För att separera gruppen "home, service, news och contact" från "login"
+      notera att home, service etc alla ligger inom en nav tag och räknas som en grupp, och login ligger utanför och räknas
+      som en grupp. space-between egenskapen kommer då inte ske mellan "home", "service" etc då de räknas som 
+      en grupp och då kommer space-between att skapa mellanrum mellan grupp 1 och 2 så att ena hamnar längst till
+      höger och den andra till vänster */
+      align-items: center; /*centrerar båda grupperna så att de ligger i samma höjd vertikalt i förhållande till varandra. */
+      padding-bottom: 70px; /*flyttar ner båda grupperna*/
+      margin-top: -50px;
+      nav {
+        a {
+          display: inline-block;
+          color: #191919; /*färg på länkarna*/
+          text-decoration: none; /*tar bort linjen under text-länken */
+          margin-right: 35px; /*separerar länkarna ifrån varandra */
+          position: relative;
+          margin-bottom: 20px;
+
+          &.active { /*När den är active så blir den fet stilad */
+            font-weight: 500;
+          }
+
+          &.active::after,
+          &:hover::after {
+            content: '';
+            position: absolute; /*Lär vi oss sen */
+            font-weight: 500;
+            height: 2px;
+            width: 15px;
+            background-color: #191919;
+            left: 50%;
+            bottom: 3px;
+            transform: translate((calc(50% - 15px))); /*Lär vi oss sen */
+          text-decoration: underline;
+          }   
+        }
+      }
+  
+        .btn-login { /*Om du kollar högre upp i filen så ser vi att knapparna Learn more och get consulting har en del css egenskaper, alla dessa gäller för login knappen också, förutom det vi lägger till här då vi lagt till en extra klass på login knappen i html filen. */
+          padding-top: 10px;
+          padding-left: 30px;
+          border-radius: 30px;
+          width: 135px;
+          height: 50px;
+
+          i {
+            margin: 10px;      
+          }
+        }
+      }
+    }
+  }
+} 
+
+.showcase {
+  background-color:  #F0EFE9; /*samma färg som headern */
+  padding-left: 20px;
+  
+  .container {
+    display: flex;
+    justify-content: space-between; /*För att separera dem ifrån varandra, inom containern, den ena går längst ut till vänster och bilden till höger */
+    align-items: center; /*Nu flyttas båda ner in mot mitten, men man ser den största skillnaden hos texten som centreras. */
+    position: relative;
+    
+    .thin-line-showcase {
+      display: none;
+
+      @media (min-width: 576px) {
+      position: absolute;
+      z-index: 1;
+      margin-top: 200px;
+      bottom: 0;
+      left: -310px;
+      display: block;
+      }
+    }
+    .content {
+      text-align: center; /*vi centrerar texten så länge vi håller oss under 1400px */
+  
+      @media (min-width: 576px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+        @media (min-width: 1200px) {
+          text-align: left;
+        }
+  
+        h1 {
+          font-family: 'DM Sans', sans-serif; /*kopierar du under import delen på fonts.google.com */
+          font-weight: 900; 
+          font-size: 35px; 
+        
+        @media (min-width: 768px) {
+          font-family: 'DM Sans', sans-serif; 
+          font-weight: 700; 
+          font-size: 70px; /*från design filen kan du se font sizen om du håller musen över siffran bredvid "bold" */
+        }
+
+        @media (min-width: 1400px) {
+          font-size: 80px;
+        }
+      }
+    }
+        
+        p { /*så länge vi ligger under 768px så kommer dessa att gälla */
+          font-size: 18px;
+          padding-bottom: 40px;/*gäller även för @media 768px*/
+          padding-left: 10px; 
+          padding-right: 10px;
+        @media (min-width: 768px) { 
+          font-size: 20px; /*när vi kommer över 768px så blir texten 20px */
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+        a {
+          display: block; /*så länge vi ligger under 576px så kommer knapparna att vara block element */
+          margin-bottom: 50px;
+          margin-right: 0px;
+
+        @media (min-width: 576px) {
+          display: inline-block; /*nu vill vi att de ska bli inline-element igen och sätta sig bredvid varandra */
+          margin-right: 10px;
+        } 
+      }
+
+      .man-img { 
+        display: none;
+        
+        @media (min-width: 1200px) {
+          display: block;
+          margin-right: -50px; /*flytta bilden till höger */
+        }
+      }
+    }
+  }
+
+  .showcase-2 {
+    @media (min-width: 576px) {
+    margin-left: -50px;
+    margin-bottom: 0;
+    background-color: rgb(255, 255, 255);
+    }
+    .container {
+        
+      .logo-section {
+        background-color: rgb(255, 255, 255);
+        display: none;
+        
+        @media (min-width: 576px) {
+          margin-bottom: 60px;
+          margin-top: 50px;
+          display: block;
+          margin-left: -100px;
+          
+        }
+        
+        .logo {
+          background-color: #ffffff;
+          margin-left: 90px;
+        }
+      }
+    }
+    
+      .container-2 {
+        padding-bottom: 100px;
+        max-width: 1400px;
+        gap: 2rem;
+        background-color: #ffffff; 
+      
+  
+        @media (min-width: 576px) {
+          background-color: #ffffff; 
+          border: solid 1.6px rgb(208, 208, 208);
+          display: flex;
+          width: 1600px;
+          height: 600px;
+          margin-left: 160px;
+      
+        }
+        
+        .left {
+          background-color:#ffffff;
+          margin-bottom: 60px;
+          
+          @media (min-width: 576px) {
+            padding-left: 115px;
+            margin-bottom: 0px;
+          }
+              
+          p {
+            font-family: 'Inter', sans-serif; /*Textsnitt */
+            font-size: 16px; /*storleken på texten */
+            font-weight: 500;
+            color: rgb(249, 77, 28);
+            margin-top: 15px;
+            text-align: center;
+            
+            @media (min-width: 576px) {
+              font-size: 18px; 
+              font-weight: 500;
+              margin-top: 60px;
+              text-align: start;
+              display: block;
+            }
+          }
+  
+          h2 {
+            font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+            font-weight: 700;
+            font-size: 27px; 
+            margin-bottom: 40px;
+            text-align: center;
+            margin-top: 10px;
+  
+            @media (min-width: 576px) {
+              font-size: 45px; 
+              text-align: left;
+              margin-top: 0px;
+              margin-left: 0px;
+              margin-bottom: 50px;
+            }
+          }
+                  
+          .btn-learn-yellow {
+            display: none;
+              
+            @media (min-width: 576px) {
+              display: block;
+              background-color: #F9D783;
+              border: solid 1px #F9D783 ;
+              color: #191919; /*Textens färg */
+              text-decoration: none; /*vi tar bort strecket under texten Login */
+              padding: 10px 160px 10px 160px; /*Här är det som att säga padding-top och bottom:8px, samt padding-top och bottom: 25px */
+              font-weight: 500; /*här får vi tjockare text */
+              font-size: 16px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+              border-radius: 30px;
+            
+              i {
+                margin: 8px; /*skapar avstånd mellan ikonen (pilen) och texten */
+                font-size: 0.9em;
+                font-weight: 700;
+              }
+            
+                &:hover { 
+                  background-color: #191919; /*När vi går över med musen så blir bakgrundsfärgen svar */
+                  border: 1px solid #191919; /*bordern blir också svart då den var gul innan*/
+                  color: #F0EFE9; /* text färgen går över från svart till vit (obs! lite mjukare vit) */
+                }
+              }   
+            } 
+          }
+        
+        .right {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          row-gap: 20px;
+          margin-top: 0px;
+          margin-left: 0px;
+  
+          @media (min-width: 576px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-top: 35px;
+            margin-left: 100px;
+            row-gap: 0;
+          }
+          
+            .business-advice {
+              margin-left: 13px;
+              
+              img {
+                margin-bottom: 10px;
+              }
+              
+              h2 {
+                font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+                font-weight: 600;
+                font-size: 18px;
+                color: #191919;   
+              }
+  
+              p {
+                color: rgb(94, 94, 93);
+                font-family: 'Inter', sans-serif; /*Textsnitt */
+                font-size: 13px; /*storleken på texten */
+                font-weight: 400;       
+              }
+  
+                @media (min-width: 576px) {
+                  margin-top: 40px;
+                  margin-left: 0;
+  
+                  img {
+                    margin-bottom: 30px;
+                  }
+  
+                  h2 {
+                  font-weight: 900;
+                  font-size: 22px;
+                  }
+  
+                  p {
+                    font-size: 16px; /*storleken på texten */
+                    font-weight: 400;
+                  }       
+                }
+              }
+                
+              .startup-business {
+                margin-left: 13px;
+                
+                img {
+                  margin-bottom: 10px;
+                }
+                    
+                h2 {
+                  font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+                  font-weight: 600;
+                  font-size: 18px;
+                  color: #191919;     
+                }
+            
+                p {
+                  color: rgb(94, 94, 93);
+                  font-family: 'Inter', sans-serif; /*Textsnitt */
+                  font-size: 13px; /*storleken på texten */
+                  font-weight: 400;     
+                }
+  
+                  @media (min-width: 576px) {
+                    margin-top: 40px;
+                    margin-left: 62px;
+  
+                    img {
+                      margin-bottom: 30px;
+                    }
+              
+                    h2 {
+                    font-weight: 900;
+                    font-size: 22px;
+                    }
+              
+                    p {
+                      font-size: 16px; /*storleken på texten */
+                      font-weight: 400;
+                    }    
+                  }
+                }
+  
+                .financial-advice {
+                  margin-left: 13px;
+                  
+                  img {
+                    margin-bottom: 10px;
+                  }
+                      
+                  h2 {
+                    font-family: 'DM Sans', sans-serif;
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: #191919;    
+                  }
+              
+                  p {
+                    color: rgb(94, 94, 93);
+                    font-family: 'Inter', sans-serif; /*Textsnitt */
+                    font-size: 13px; /*storleken på texten */
+                    font-weight: 400;        
+                  }
+                  
+                    @media (min-width: 576px) {
+                      margin-top: 40px;
+                      margin-left: 0px;
+                    
+                      img {
+                        margin-bottom: 30px;
+                      }
+                
+                      h2 {
+                      font-weight: 900;
+                      font-size: 22px;
+                      }
+                
+                      p {
+                        font-size: 16px; /*storleken på texten */
+                        font-weight: 400;
+                      }   
+                    }
+                  }
+  
+                  .risk-management {
+                    margin-left: 13px;
+                    img {
+                      margin-bottom: 10px;
+                    }
+                  
+                    h2 {
+                      font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+                      font-weight: 600;
+                      font-size: 18px;
+                      color: #191919;     
+                    }
+                
+                    p {
+                      color: rgb(94, 94, 93);
+                      font-family: 'Inter', sans-serif; /*Textsnitt */
+                      font-size: 13px; /*storleken på texten */
+                      font-weight: 400;     
+                    }
+  
+                    @media (min-width: 576px) {
+                      margin-top: 40px;
+                      margin-left: 62px;
+  
+                      img {
+                        margin-bottom: 30px;
+                      }
+                
+                      h2 {
+                      font-weight: 900;
+                      font-size: 22px;
+                      }
+                
+                      p {
+                        font-size: 16px; /*storleken på texten */
+                        font-weight: 400;
+                      }  
+                    }
+                  }
+        }
+      }
+  }
+  
+.part-3 {
+  margin-bottom: 100px;
+  background-color: #ffffff;
+  padding: 30px;
+  // height: 100dvh;
+
+  @media (min-width: 576px) {
+    // margin-top: 100px; /*Gör att du kan flytta upp ramen ännu mer då vanlig margin inte räcker */
+    margin-bottom: 100px;
+    margin-left: -240px;
+    background-color: #ffffff;
+    padding: 0;
+  }
+
+  .container {
+    
+    @media (min-width: 576px) {
+      display: flex;
+      gap: 133px;
+      padding-top: 100px;
+    }
+    .content-3-left {
+      position: relative; /* Gör den överordnade behållaren relativt positionerad */
+      flex:1;
+      
+        .woman-img {
+          display: none;
+        
+          @media (min-width: 576px) {
+          display: block;
+          margin-left: 200px;
+          
+          img { 
+            display: block;
+            margin-bottom: 1px;
+          }
+        }
+      }
+    
+        .blue-box {
+          display: none;
+          @media (min-width: 576px) {
+          width: 380px; /* Bredden på lådan */
+          height: 180px; /* Höjden på lådan */
+          background-color: rgb(190, 235, 255); /* Bakgrundsfärg */
+          border: 2px solid rgb(190, 235, 255); /* Ram */
+          padding: 20px; /* Inre utfyllnad */
+          position: absolute; /* Gör "blue-box" absolut positionerad inom den relativt positionerade föräldern */
+          top: 390px; /*förflytta blue-box ner från toppen */
+          left: 130px; /* Placera "blue-box" längst till vänster i förälderns utrymme */
+          z-index: 1; /* Lägg "blue-box" ovanpå "woman-img" */
+          // padding-top: 39px;
+          display: block;
+          }
+          
+            h3 {
+              font-size: 18px; /* Ange önskad fontstorlek för "Samantha Brown" */
+              font-weight: 800; /* på design filen är den 700, men här ser det ut som 800 motsvarar 700 i design filen */
+              font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+              color: #191919;/* Ange önskad textfärg */
+              margin: 0; /* Ta bort eventuell marginal som standardmässigt läggs till av webbläsaren */
+              display: inline; /* Placera elementet som inline för att ligga på samma rad som features */
+              
+            }
+
+              .founder-paragraph {
+                font-size: 14px; /* Ange önskad fontstorlek för "features" */
+                font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+                font-weight: 700; /* font 700 =bold */
+                color: rgb(249, 77, 28); /* Ange önskad textfärg om annorlunda än h3 */
+                margin: 0; /* Ta bort eventuell marginal som standardmässigt läggs till av webbläsaren */
+                display: inline; /* Placera elementet som inline för att ligga på samma rad */
+              }
+
+                .lorem-paragraph {
+                  font-size: 14px;
+                  font-weight: 400;
+                  font-family: 'Inter', sans-serif; 
+                  margin-top: 13px;
+
+            }
+         }
+      }
+    }
+    
+      .content-3-right {
+        flex: 1.1;
+        text-align: start;
+
+        br {
+          display: none;
+        }
+
+        @media (min-width: 576px) {
+          margin-left: 0px;
+          text-align: start;
+          margin-bottom: 210px;
+
+          br {
+            display: block;
+          }
+        }
+
+        .about-company-paragraph {
+          display: none;
+          color: rgb(249, 77, 28);
+          margin-top: -5px;
+          font-family: 'Inter', sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          display: block;
+
+          @media (min-width: 576px) {
+            margin-top: -5px;
+            font-weight: 500;
+            display: block;
+            font-size: 16px;
+          }  
+        }
+
+        h2 {
+          font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+          font-weight: 800;
+          font-size: 22px;
+          text-align: start;
+
+          br {
+            display: none;
+          }
+          
+          @media (min-width: 576px) { 
+            font-weight: 800;
+            font-size: 40px;
+            text-align: start;
+
+            br {
+              display: block;
+            }
+          }
+        }
+
+        .lorem {
+          font-size: 13px;
+          font-weight: 400;
+          font-family: 'Inter', sans-serif;
+          color: #707070; 
+          margin-top: 29px;
+          line-height: 25px;
+
+          @media (min-width: 576px) { 
+            font-size: 13px;
+          font-weight: 400; 
+          margin-top: 29px;
+          line-height: 30px;
+          }
+          
+        }
+
+        .lorem-2 {
+          font-size: 13px;
+          font-weight: 400;
+          font-family: 'Inter', sans-serif;
+          color: #707070; 
+          margin-top: 29px;
+          line-height: 25px;
+
+          @media (min-width: 576px) {  
+          line-height: 30px;
+          }
+        }
+
+        .btn-learnmore {
+          position: absolute;  
+          background-color: #191919;
+          border: solid 1px #191919;
+          color: #ffffff; /*Textens färg */
+          text-decoration: none; /*vi tar bort strecket under texten Login */
+          font-family: 'Inter', sans-serif;
+          font-weight: 400; /*här får vi tjockare text */
+          font-size: 10px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+          border-radius: 30px;
+          padding: 3px 15px 0px 20px;
+          margin-bottom: 0px;
+          margin-top: 10px;
+
+          i {
+            margin: 8px; /*skapar avstånd mellan ikonen (pilen) och texten */
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #ffffff;
+          }
+
+          @media (min-width: 576px) {  
+            font-size: 14px; 
+            padding: 10px 30px;
+            margin-top: 110px;
+
+            &:hover { 
+            background-color: #191919; 
+            border: 1px solid #191919; 
+            color: #F0EFE9; 
+            }
+          }
+        }
+
+        .btn-video {
+          position: absolute;
+          margin-left: 150px;
+          margin-top: 5px;
+          border: solid 1.5px #191919;
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          
+
+          i {
+            margin:6px 10px 9px 7px; /*skapar avstånd mellan ikonen (pilen) och texten */
+            font-size: 0.55em; /*storlek på ikonen */
+            text-align: center;
+          }
+
+          @media (min-width: 576px) { 
+            margin-left: 220px;
+            margin-top: 112px;
+            height: 45px;
+            width: 45px;
+            border-radius: 22.5px;
+
+            i {
+              margin: 9px; /*skapar avstånd mellan ikonen (pilen) och texten */
+              font-size: 0.6em; /*storlek på ikonen */
+            }
+          }
+        }
+
+        .intro-video-paragraph {
+          position: absolute;
+          margin-left: 195px;
+          margin-top: 16px;
+          font-family: 'Inter', sans-serif;
+          font-weight: 400;
+          font-size: 0.7em;
+          
+          @media (min-width: 576px) {
+            margin-left: 280px;
+            margin-top: 125px;
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+
+
+.we-provide-part4 {
+  background-color: rgb(240, 239, 233);
+  position: relative;
+  
+  .thin-line {
+    display: none;
+
+    @media (min-width: 576px) { 
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    display: block;
+    }
+  }
+    
+    .container {
+      border: solid 1px rgb(240, 239, 233);
+      background-color: rgb(240, 239, 233);
+      position: relative;
+      padding-bottom: 200px;
+    
+      .main-text {
+        margin-left: 20px;
+        margin-bottom: 400px;
+        position: absolute;
+        text-align: center;
+        padding-top: 20px;
+        
+        p {
+          color: rgb(249, 77, 28);
+          font-family: 'Inter', sans-serif;
+          font-size: 16px;
+          font-weight: 500;   
+        }
+
+        h2 {
+          font-family: 'DM Sans', sans-serif;
+          font-weight: 800; 
+          font-size: 30px;
+          color: #191919;
+        
+        }
+
+        @media (min-width: 576px) {
+          margin-left: 14px;
+          margin-top: 120px;
+          text-align: start;
+          padding-top: 0px;
+          
+          p {
+            font-size: 18px;
+          }
+  
+          h2 {
+          font-size: 45px;
+          font-weight: 700;
+          }
+        }  
+      }
+
+      .boxes {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        row-gap: 50px;
+
+        @media (min-width: 576px) {
+          display: flex;
+          margin-top: 314px;
+          row-gap: 0px;
+          
+        }
+
+        .box-1,
+        .box-3, 
+        .box-4 {
+          width: 308px; /* Bredden på lådan */
+          height: 250px; /* Höjden på lådan */
+          background-color: rgb(255, 255, 255); /* Bakgrundsfärg */
+          border: 2px solid rgb(255, 255, 255); /* Ram */
+          padding: 20px; /* Inre utfyllnad */
+          margin: 0 15px;
+          position: relative;
+          
+          img {
+            margin-top: 20px;
+            margin-bottom: 30px;
+          } 
+            
+          h3 {
+            color: #191919;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+          }
+
+          p {
+          font-family: 'Inter', sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          color: #191919;
+          }
+
+          .btn-go-to {
+            position: absolute;
+            background-color: #191919;
+            border: solid 1px black;
+            color: #191919; /*Textens färg */
+            height: 40px;
+            width: 40px;
+            border-radius: 25px;
+            margin-left: 220px;
+            margin-top: 10px;
+            z-index: 1;
+            
+            i {
+              position: absolute;
+              color: white;
+              margin-left: 15px;
+              margin-top: 10px;
+              font-size: 1em;
+              font-weight: 390;
+            }
+          }
+
+          @media (min-width: 576px) {
+            height: 333px;   
+
+            img {
+              margin-top: 28px;
+              margin-bottom: 44px;
+            } 
+          
+            h3 {
+              font-size: 22px;
+              font-weight: 900;
+            }
+
+            p {
+              font-size: 16px;
+              font-weight: 400;
+            } 
+             
+            .btn-go-to {
+              height: 50px;
+              width: 50px;
+              margin-left: 200px;
+              margin-top: 18px;
+              
+              i {
+                margin-left: 20px;
+                margin-top: 15px;
+                font-size: 1.2em;
+                transform: translate(-20%, -0%); /* Centrera ikonen helt och hållet */
+              }
+            }   
+          }
+        }
+
+        .box-2 {
+          width: 308px; /* Bredden på lådan */
+          height: 250px; /* Höjden på lådan */
+          background-color: rgb(249, 215, 131); /* Bakgrundsfärg */
+          border: 2px solid rgb(249, 215, 131); /* Ram */
+          padding: 20px; /* Inre utfyllnad */
+          margin: 0 15px;
+          
+          img {
+            margin-top: 20px;
+            margin-bottom: 30px;
+          } 
+          
+          h3 {
+            color: #191919;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+          }
+
+          p {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #191919;
+          }
+
+          .btn-yellow-box {
+            position: absolute;
+            background-color: #ffffff;
+            border: solid 1px rgb(255, 255, 255);
+            color: #191919; /*Textens färg */
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            margin-left: 200px;
+            margin-top: 18px;
+            z-index: 1;
+            
+            i {
+              position: absolute;
+              color: rgb(0, 0, 0);
+              margin-left: 20px;
+              margin-top: 15px;
+              font-size: 1.2em;
+              font-weight: 400;
+              transform: translate(-20%, -0%)
+            }
+          }
+        
+            @media (min-width: 576px) {
+              height: 333px; /* Höjden på lådan */
+              
+              img {
+                margin-top: 28px;
+                margin-bottom: 44px;
+              } 
+              
+              h3 {
+                font-size: 22px;
+              }
+    
+              p {
+              font-size: 16px;
+              }
+            }
+          }
+        }
+        .centered-browse-services-button {
+          position: relative;
+          
+          .button-under-boxes {
+            display: flex;
+            justify-content: center;
+            margin-top: 48px;
+            
+            .btn-transparent {
+              font-family: 'Inter', sans-serif;
+              font-size: 16px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+    
+    
+
+.why-choose-us-part5 {
+  margin-top: 30px;
+  position: relative;
+
+  @media (min-width: 576px) {
+    margin-right: 185px;
+    margin-top: 4rem;
+  }
+
+  .container {
+    display: flex;
+
+    .left {
+      margin-top: -29px;
+      margin-left: 30px;
+
+      .title {
+        padding-top: 20px;
+        margin-right: -35px;
+        
+        p {
+          color: rgb(249, 77, 28);
+          font-family: 'Inter', sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          text-align: center;
+        }
+
+        h2 {
+          color: #191919;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 25px;
+          font-weight: 800;
+          margin-bottom: 55px;
+          text-align: center;
+        
+          br {
+            display: none;
+          }
+        }
+      }
+
+      @media (min-width: 576px) {
+      margin-left: 100px;
+
+        .title {
+          padding-top: 0px;
+          margin-right: 0;
+          p {
+            font-size: 18px;
+            text-align: start;
+          }
+
+          h2 { 
+            font-size: 45px;
+            font-weight: 900;
+            text-align: start;
+
+            br {
+              display: block;
+            }
+          }
+        }
+      }
+        
+  .text-and-img {
+    display: grid;
+    margin-left: -25px;
+    margin-bottom: 15px;
+  
+    img {
+      margin-bottom: 15px;
+      max-width: 50px;
+    }
+
+    h3 {
+      margin-left: 24px;
+      color: #191919;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 900;    
+    }
+
+    p {
+      margin-left: 24px;
+      color: #7a7979;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 576px) {
+      display: flex;
+      align-items: flex-start; /* Justera till vänster i kolumnlayout */
+      margin-left: 0px;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      border: none;
+    
+      img {
+        margin-bottom: 30px;
+        max-width: none;
+      }
+  
+      h3 {
+        font-size: 20px;  
+      }
+  
+      p {
+        font-size: 16px;
+        white-space: nowrap;
+      }
+    }
+  } 
+}
+        
+    .right {
+      position: relative;
+      padding-right: 554px;
+
+      .beige-box {
+        display: none;
+        }
+  
+      img {
+        display: none;
+        }
+
+      @media (min-width: 576px) {
+        position: relative;
+        padding-right: 554px;
+        
+        .beige-box {
+          display: block;
+          position: absolute;
+          width: 90%; /* Ange önskad bredd */
+          height: 425px; /* Ange önskad höjd */
+          background-color: rgb(240, 239, 233); /* Ange önskad bakgrundsfärg */
+          border: 2px solid rgb(240, 239, 233); /* Ange önskad ramfärg och tjocklek */
+          padding: 10px; /* Ange önskat inre utfyllnad */
+          text-align: center; /* Centrera text inom lådan */
+          color: #ffffff; /* Ange önskad textfärg */
+          font-size: 18px; /* Ange önskad textstorlek */
+          right: 0;
+          bottom: 0;
+        }
+    
+        img {
+          position: relative;
+          top: 15px; /* Justera vertikal position */
+          left: 230px; /* Justera horisontell position */
+          overflow: hidden;
+          display: block;
+        }
+      }
+    }
+  }   
+}
+.project-and-case-6 {
+
+  .container {
+
+    .section-title {
+      text-align: center; /*centrerar endast denna section title som vi har i project and case */
+      padding-top: 70px;
+      padding-bottom: 40px;
+
+      p {
+        margin-bottom: 17px;
+      }
+
+      h2 {
+        margin-bottom: 40px;
+      }
+
+      @media (min-width: 768px) {
+        padding-top: 120px; /*skapar avstånd till toppen  */
+        padding-bottom: 90px;
+      }
+    }
+
+    .project-and-cases {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      &:hover .read-more{ //när du går över bilderna med musen så får read-more knappen en underline
+        text-decoration: underline;
+      }
+
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      article {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+
+        a {
+          img {
+          width: 100% /*Här kommer bilderna att anpassas efter storleken på sidan, gör du skärmen mindre blir också bilderna mindre osv. */;
+          height: auto; /*Elementet kommer att vara så högt som det behöver vara för att rymma sitt innehåll utan att du behöver specificera en exakt höjd. */
+          }
+        }
+
+        h3 {
+          color: #191919;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 22px;
+          font-weight: 700;
+          padding-top: 35px;
+          padding-bottom: 16px;
+          border-bottom: solid 1px #DAD9D3;
+          text-align: left;
+        }
+
+        .read-more {
+          padding: 15px; //skapar utrymme runt om kring så att den får större avstånd
+          margin-right: 16px;
+          display: block; /*efter som att a element är inline element, så kan de ej flyttas hur som helst då de endast tar upp den bredden den behöver. Därför omvandlar vi elementet till ett block element för att kunna flytta den i sidled */
+          text-align: right;
+          color: #191919;
+          font-family: 'Inter', sans-serif; //textsnitt
+          font-size: 14px; 
+          font-weight: 500; 
+          text-decoration: none; //detta tar bort raden som normalt finns under länkar
+          
+          i {
+            margin-left: 3px;
+          }
+        }
+      }  
+    }
+
+    .all-recent-projects-div {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      margin-bottom: 80px;
+
+      .btn-black  {
+        padding: 10px 10px 10px 20px;
+      }
+
+      @media (min-width: 576px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 70px 150px 150px 150px; 
+
+        .btn-black  {
+          padding: 10px 10px 10px 20px;
+        }
+      }
+    }
+  }
+}
+
+.team-members-7 {
+  background-color: rgb(240, 208, 130);
+  height: 2500px;
+
+  @media (min-width: 576px) { 
+    background-color: rgb(240, 208, 130);
+    height: 980px;
+  }
+
+  .container {
+
+    .title-container {
+      align-items: start;
+      margin-bottom: 10px;
+      padding-top: 20px;
+
+      @media (min-width: 576px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 95px;
+        padding-top: 60px;
+      }
+
+      .section-title{
+        text-align: center;
+        
+        p {
+          color: rgb(249, 77, 28);
+          font-family: 'Inter', sans-serif;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        h2 {
+          font-family: 'DM Sans', sans-serif; /*kopierar du under import delen på fonts.google.com */
+          font-weight: 700; /*kolla design mallen och hämta från fonts.google.com */
+          font-size: 30px;
+          color: #191919;
+        }
+      }
+
+        @media (min-width: 576px) {
+
+          .section-title {
+            text-align: start;
+            
+            p {
+              display: block;
+              color: rgb(249, 77, 28);
+              font-family: 'Inter', sans-serif;
+              font-weight: 500;
+              font-size: 18px;
+            }
+
+            h2 {
+              font-weight: 700; /*kolla design mallen och hämta från fonts.google.com */
+              font-size: 45px;
+
+              br {
+                display: none;
+              }
+            }
+          } 
+        }
+
+          .btn-browse-team {
+            display: none;
+
+
+            @media (min-width: 576px) { 
+              margin-left: 260px;
+              margin-top: 50px;
+              margin-right: -10px;
+              display: block;
+
+              a {
+                background-color: #F9D783;
+                border: solid 1px #000000 ;
+                color: #191919; /*Textens färg */
+                text-decoration: none; /*vi tar bort strecket under texten Login */
+                padding: 16px 25px; /*Här är det som att säga padding-top och bottom:8px, samt padding-top och bottom: 25px */
+                font-weight: 500; /*här får vi tjockare text */
+                font-size: 16px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+                border-radius: 30px;
+                font-family: 'Inter', sans-serif;
+
+                i {
+                  margin-left: 20px; /*skapar avstånd mellan ikonen (pilen) och texten */
+                  font-size: 0.9em;
+                  font-weight: 600;   
+                }
+
+                &:hover { 
+                  background-color: #191919; /*När vi går över med musen så blir bakgrundsfärgen svar */
+                  border: 1px solid #191919; /*bordern blir också svart då den var gul innan*/
+                  color: #F0EFE9; /* text färgen går över från svart till vit (obs! lite mjukare vit) */
+                }
+              }
+            }
+          }
+    }
+
+      .section-team-members {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+
+        @media (min-width: 576px) { 
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          column-gap: 31px;
+          margin-top: 121px;
+        }
+
+        .members-name-and-proffesion {
+          margin-top: 50px;
+          margin-left: 30px;
+
+          @media (min-width: 576px) {
+            margin-left: 0px;
+          }
+          
+          .img-member {
+            
+          }
+
+          h4 {
+            font-family: 'DM Sans', sans-serif; /*kopierar du under import delen på fonts.google.com */
+            font-weight: 700; /*kolla design mallen och hämta från fonts.google.com */
+            font-size: 22px;
+            color: #191919;
+            margin-top: 15px;
+          }
+
+          p {
+            color: #191919;
+            font-family: 'Inter', sans-serif; /*Textsnitt */
+            font-size: 16px; /*storleken på texten */
+            font-weight: 500; /*hur stark färgen blir */
+          }
+
+          a {
+
+          }
+
+            @media (min-width: 576px) {
+              margin-top: 0;
+
+              .img-member {
+                display: block;
+                width: 50px;
+                height: px;
+              }
+
+            h4 {
+              font-weight: 700; /*kolla design mallen och hämta från fonts.google.com */
+              font-size: 22px;
+              margin-top: 29px;
+            }
+
+            p {
+              color: #191919;
+              font-family: 'Inter', sans-serif; /*Textsnitt */
+              font-size: 16px; /*storleken på texten */
+              font-weight: 500; /*hur stark färgen blir */
+            }
+
+            a {
+
+            } 
+
+            }
+          }
+        }
+
+    .circles {
+      display: none;
+
+    @media (min-width: 576px) {
+      display: block;
+      display: grid;
+      grid-template-columns: repeat(5, 10px); /* Skapar 4 kolumner med 100px vardera */
+      grid-gap: 15px; /* Avstånd mellan cirklarna */
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+
+      .circle {
+        width: 10px;
+        height: 10px;
+        background-color: #404a51;
+        opacity: 20%; /* Fyllningsfärg för cirklarna */
+        border-radius: 50%; /* Gör elementet till en cirkel */
+
+      }
+      .circle-2 {
+        width: 10px;
+        height: 10px;
+        background-color: #191919;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+
+.what-our-client-says-8 {
+  background-color: rgb(240, 208, 130);
+  height: 1200px;
+
+  @media (min-width: 576px) { 
+    height: 900px;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    text-align: center;
+
+    @media (min-width: 576px) { 
+      padding: 200px 120px 100px 120px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    
+    .section-title {
+      margin-top: 20px;
+      margin-bottom: 170px;
+      
+      p {
+        color: rgb(249, 77, 28);
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      h2 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 35px;
+        color: #191919;
+      }
+
+      @media (min-width: 576px) { 
+        margin-top: -80px;
+        margin-bottom: 80px;
+      
+        p {
+          display: block;
+          font-size: 18px;
+        }
+      
+        h2 { 
+          font-size: 45px;
+        }
+      }
+    }
+
+    .total-comments {
+      display: grid;
+      background-color: #ffffff;
+      margin-top: 150px;
+
+      @media (min-width: 576px) { 
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        margin-right: 50px;
+        margin-left: 60px;
+        margin-top: 0;
+      }
+
+      .rating-1 {
+        text-align: start;
+
+        span {
+          color: rgb(249, 77, 28); /* Färg på aktiverade stjärnor */
+          height: 16px;
+          font-size: 18px;
+          margin-right: -3px;
+          margin-bottom: -60px;
+        }
+
+        p {
+          padding-top: 15px;
+          font-family: 'Inter', sans-serif; /*Textsnitt */
+          font-size: 14px; /*storleken på texten */
+          font-weight: 400;
+          margin-bottom: 150px;
+          line-height: 2;
+        }
+
+        .jack-paragraph {
+            padding-top: 15px;
+            font-family: 'Inter', sans-serif; /*Textsnitt */
+            font-size: 14px; /*storleken på texten */
+            font-weight: 400;
+            line-height: 2;
+        }
+
+        @media (min-width: 576px) {
+          text-align: start;
+          position: static;
+        
+          span {
+            margin-bottom: 0px;
+          }
+
+          p {
+            padding-top: 20px;
+            margin-bottom: 30px;
+          }
+        }
+
+        .img-name-profession {
+          display: flex;
+          
+          @media (min-width: 576px) { 
+            display: flex;
+          }     
+        } 
+      }
+
+          .three-images {
+            position: absolute;
+            z-index: 1;
+            margin-top: -405px;
+            
+            img {
+              width: 70px;
+              height: 70px;
+            }
+
+            @media (min-width: 576px) {
+              position: static;
+              z-index: 0;
+              margin-top: 0px;
+            }
+          }
+
+          .name-profession {
+            margin-left: 90px;
+            margin-top: -400px;
+            position: absolute;
+            z-index: 1;
+
+            h4 {
+              font-family: 'DM Sans', sans-serif; /*kolla design mallen och hämta från fonts.google.com */
+              font-weight: 700;
+              font-size: 18px; 
+              margin-bottom: -20px;
+            }
+
+            p {
+              color: rgb(249, 77, 28);
+              font-family: 'Inter', sans-serif; /*Textsnitt */
+              font-size: 13px; /*storleken på texten */
+              font-weight: 400;
+            }
+
+            @media (min-width: 576px) { 
+              z-index: 0;
+              position: static;
+              margin-left: 18px;
+              margin-top: 5px;
+              margin-bottom: 68px;
+
+              h4 {
+                font-weight: 700;
+                font-size: 20px; 
+                margin-bottom: -20px;
+              }
+
+              p {
+                font-size: 14px; /*storleken på texten */
+                font-weight: 400;
+              }
+            } 
+          }
+      }
+
+    .all-recent-projects-div {
+      margin-bottom: 50px;
+      position: relative;
+
+      .btn-black {
+        position: absolute;
+        margin-top: -60px;
+
+        background-color: #000000;
+        border: solid 1px #191919;
+        color: #ffffff; /*Textens färg */
+        text-decoration: none; /*vi tar bort strecket under texten Login */
+        font-family: 'Inter', sans-serif;
+        font-weight: 400; /*här får vi tjockare text */
+        font-size: 15px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+        border-radius: 30px;
+        padding: 5px 25px;
+        margin-left: -90px;
+
+        i {
+          margin: 8px; /*skapar avstånd mellan ikonen (pilen) och texten */
+          font-size: 0.9em;
+          font-weight: 500;
+          color: #ffffff;
+        }
+      } 
+
+      @media (min-width:576px) {
+        margin-bottom: 50px;
+
+        .btn-black {
+          position: static;
+          padding: 13px 25px;
+          margin-left: 0px;
+
+          &:hover { /*fixa denna biten sen */
+          background-color: #191919; /*När vi går över med musen så blir bakgrundsfärgen svar */
+          border: 1px solid #191919; /*bordern blir också svart då den var gul innan*/
+          color: #F0EFE9; /* text färgen går över från svart till vit (obs! lite mjukare vit) */
+          } 
+        }
+      }
+    }
+  }
+}
+     
+.article-and-news-9 {
+  
+  @media (min-width: 576px) { 
+    margin-right: 20px;
+  }
+  .container {
+
+    .title-container {
+  
+      @media (min-width: 576px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+       }
+        
+      .section-title {
+        margin-top: 150px;
+        
+        p {
+          color: rgb(249, 77, 28);
+          font-family: 'Inter', sans-serif;
+          font-weight: 500;
+          font-size: 18px;
+        }
+      
+        h2 {
+          font-family: 'DM Sans', sans-serif; 
+          font-weight: 700; 
+          font-size: 45px;
+          color: #191919;
+        }
+        
+        @media (min-width: 576px) {
+          
+          p {
+            font-weight: 500;
+            font-size: 18px;
+          }
+        
+          h2 {
+            font-weight: 700; 
+            font-size: 45px;
+          }
+        }
+      }
+
+      .btn-class {
+        
+        .btn-transparent {
+          display: none;
+          
+          @media (min-width: 576px) {
+            display: block;  
+          }
+        }
+      
+        .btn-transparent{
+          
+        }
+      }
+    }
+    .how-to-section {
+      display:grid;
+      grid-template-columns: 1fr;
+      row-gap: 50px;
+      margin-top: 50px;
+
+      @media (min-width: 576px) {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 31px;
+        margin-top: 30px;
+        }
+
+      .text-under-img {
+
+        #business {
+          display: none;
+        }
+        a {
+
+        }
+    
+        p {
+          display: block;
+          color: #191919;
+          font-family: 'Inter', sans-serif;
+          font-size: 14px; 
+          font-weight: 500;
+        }
+    
+        h4 {
+          font-family: 'DM Sans', sans-serif; 
+          font-weight: 700; 
+          font-size: 21px;
+          color: #191919;
+          margin-top: 15px;
+        }
+
+        @media (min-width: 576px) { 
+          position: relative;
+          #business {
+            display: block;
+            color: #191919;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 26px;
+          }
+
+          p {
+            font-size: 16px;  
+          }
+      
+          h4 {
+            font-size: 22px;
+            margin-top: 29px;
+          }
+        }
+      }
+
+      .yellow-rectangle-3 {
+        position: absolute;
+        z-index: 1;
+        margin-left: 16px;
+        margin-top: 840px;
+
+        .mars-13 {
+          font-family: 'DM Sans', sans-serif; 
+          font-weight: 400; 
+          font-size: 17px;
+          color: #191919;
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          line-height: 20px;
+            
+            &::first-line { 
+              font-size: 20px;
+              font-weight: 700;
+            }
+
+          }
+          .day {
+            margin-left: 5px;
+          }
+
+          @media (min-width: 576px) { 
+            margin-left: 920px;
+            margin-top: 15px;
+
+          }
+        }
+      }
+
+      .yellow-rectangle-2 {
+        position: absolute;
+        z-index: 1;
+        margin-left: 17px;
+        margin-top: 430px;
+
+          .mars-17 {
+            font-family: 'DM Sans', sans-serif; /*kopierar du under import delen på fonts.google.com */
+            font-weight: 400; /*kolla design mallen och hämta från fonts.google.com */
+            font-size: 17px;
+            color: #191919;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            line-height: 20px;
+            &::first-line { /* Välj den första textraden */
+              font-size: 20px; /* Ange en annan fontstorlek för den första raden ("25") */
+              font-weight: 700;
+            }
+
+          }
+          .day {
+            margin-left: 5px;
+          }
+
+        @media (min-width: 576px) {
+          margin-left: 470px;
+          margin-top: 15px;
+        }
+      }
+   
+      .yellow-rectangle-1 {
+        position: absolute;
+        z-index: 1;
+        margin-left: 17px;
+        margin-top: 15px;
+        
+        .mars-25 {
+            font-family: 'DM Sans', sans-serif; /*kopierar du under import delen på fonts.google.com */
+            font-weight: 400; /*kolla design mallen och hämta från fonts.google.com */
+            font-size: 17px;
+            color: #191919;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            line-height: 20px;
+            
+            &::first-line {
+              font-size: 20px; 
+              font-weight: 700; 
+            }  
+        }
+      }
+
+    .circles {
+      display: none;
+
+      @media (min-width: 576px) {
+        display: block;
+        display: grid;
+        grid-template-columns: repeat(5, 10px); /* Skapar 4 kolumner med 100px vardera */
+        grid-gap: 15px; /* Avstånd mellan cirklarna */
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 70px;
+          
+        .circle {
+          width: 10px;
+          height: 10px;
+          background-color: #404a51;
+          opacity: 20%; /* Fyllningsfärg för cirklarna */
+          border-radius: 50%; /* Gör elementet till en cirkel */
+        }
+
+        .circle-1 {
+          width: 10px;
+          height: 10px;
+          background-color: #191919;
+          border-radius: 50%;
+        }
+      } 
+    }
+  }
+}
+
+  // Section over black navigation
+.signup {
+  background-color: #F0EFE9;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 100px;
+  
+  @media (min-width: 576px) {
+    background-color: #F0EFE9;
+    height: 14rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 0px;
+  }
+
+  .m-detail {
+    display: none;
+    
+    @media (min-width: 576px) { 
+      display: block;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right:0;
+    }
+  }
+
+  .container{
+    display: block;
+    
+    @media (min-width: 576px) { 
+      display: flex;
+      gap: 190px;
+     }
+    
+    .left {
+
+      h3 {
+        font-family: 'DM Sans', sans-serif; 
+        font-weight: 800; 
+        font-size: 25px;
+        color: #191919;
+        margin-bottom: 40px;
+      }
+
+      @media (min-width: 576px) {
+        
+        h3 { 
+        font-size: 40px;
+        margin-bottom: 0px;
+        }
+       }
+      }
+
+    .right {
+      
+      .searchbar-plus-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        @media (min-width: 576px) { 
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .searchbox {
+          display: inline-block;
+          margin-right: 10px;
+          border-radius: 25px;
+
+          input {
+            border: solid 1px rgb(192, 192, 192);
+            text-align: center;
+            font-size: 5px;
+            outline: none;
+          }
+
+          #email {
+            border-radius: 25px; /* Rundade kanter */
+            padding: 8px 8px 8px 0;
+            font-size: 16px; /* Ange textstorlek */
+          }
+
+          #email::placeholder {
+            color: #999; /* Grå färg för plachållartexten */
+            font-style: italic; /* Kursiv stil för plachållartexten */
+            font-size: 15px;
+          }
+           
+          @media (min-width: 576px) {  
+            display: flex;
+            border-radius: 25px;
+
+            input {
+              border: none;
+            }
+            
+            #email {
+              padding: 14px 80px 14px 40px; /* Lägg till lite utrymme runt texten */
+              border: none;
+            }
+
+            #email::placeholder {
+              font-size: 17px;
+            }  
+          }   
+        }
+
+        .btn-subscribe {
+          
+          .subscribe {
+            background-color: #F9D783;
+            border: solid 1px #F9D783 ;
+            color: #191919; 
+            text-decoration: none; 
+            padding: 10px 8px 12px 16px; 
+            font-weight: 500; 
+            font-size: 13px; 
+            border-radius: 30px;
+            border-color: #e2c67e;
+            
+            i {
+              margin: 8px; 
+              font-size: 0.9em;
+              font-weight: 700;
+            }
+
+            @media (min-width: 576px) {  
+              background-color: #F9D783;
+              border: solid 1px #F9D783 ;
+              color: #191919; 
+              text-decoration: none; 
+              padding: 15px 28px; 
+              font-weight: 500; 
+              font-size: 16px; 
+              border-radius: 30px;
+             
+              &:hover { 
+                background-color: #191919; 
+                border: 1px solid #191919; 
+                color: #F0EFE9;
+              }
+            }
+          }
+        }
+      }
+    } 
+  }
+}
+
+.black-navigation {
+  background-color: #0E1021;
+  height: 300px;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    column-gap: 7px;
+    row-gap: 10px;
+    margin-left: 10px;
+    
+    @media (min-width: 576px) { 
+      margin-left:auto;
+      column-gap: 107px;    
+    }
+
+
+    .crito {
+      display: none;
+      
+      @media (min-width: 576px) {
+        display: block;
+        margin-top: -10px;
+        
+        img {
+          padding-bottom: 20px;
+        }
+
+        p {
+        color: #b9b9b9;
+        }
+      }
+    }
+
+      .small-titles {
+
+
+        .help {
+          margin-left: 5px;
+        }
+
+        .link {
+          margin-right: -20px;
+          position: absolute;
+        }
+
+        .company {
+        margin-left: -7px ;
+        }
+
+        h4{
+          color: #ffffff;
+          font-family: 'DM Sans', sans-serif;
+          font-weight: 700; 
+          font-size: 14px;
+          padding-bottom: 5px;
+        }
+
+        a {
+          text-decoration: none;
+          color: #b9b9b9;
+          font-family: 'Inter', sans-serif;
+          font-size: 12px; 
+          font-weight: 500;
+        }
+
+          @media (min-width:576px) {
+            display: grid;
+            column-gap: 0;
+
+            .help {
+            margin-left: 0px;
+            }
+
+            .link {
+              margin-left: 0px;
+              position: static;
+            }
+
+
+            h4{
+              font-weight: 700; 
+              font-size: 18px;
+              padding-bottom: 20px;
+            }
+
+            a {
+              text-decoration: none;
+              font-size: 14px; 
+              font-weight: 500;
+              
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      
+  .grey-lines {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    }
+  }
+
+.footer {
+  background-color: #0E1021;
+  border-top: solid 1px #707070;
+  display: flex;
+  
+  @media (min-width:576px) { 
+    display: block;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    
+      .left {
+        
+        p {
+          color: #b9b9b9;
+          font-family: 'Inter', sans-serif; /*Textsnitt */
+          font-size: 12px; /*storleken på texten */
+          font-weight: 400;
+          order: 1;
+          margin-left: 11px; 
+        }
+
+      }
+      .right {
+        margin-left: 60px;
+        margin-bottom: 20px;
+        
+        a {
+          color: #ffffff;
+          font-size: 1.3rem; 
+          margin-right: 50px;
+          order: 2;
+          }
+      }
+
+    @media (min-width:576px) { 
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+
+      .left {
+        
+        p {
+          font-size: 14px; 
+          margin-left: 0;
+        }
+      }
+
+      .right {
+        
+        a {
+          margin-right: 10px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+//contact-section
+
+header {
+  background-color: #F0EFE9;
+  padding: 16px;
+  margin-bottom: -50px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 70px;
+
+    .crito {
+      margin-top: 0;
+      padding-bottom: 100px; 
+    }
+
+    .menu-bars {
+      border: none;
+      font-size: 25px;
+      background-color: transparent;
+
+      @media (min-width: 992px) {
+        display: none;
+      }
+    }
+
+    .menu { 
+      display: none;
+      flex: 1;
+
+      @media (min-width: 992px) {
+        display: block;
+      }
+
+      .top-menu {
+        display: flex; 
+        justify-content: end;
+        border-bottom: 1px solid #DAD9D3; 
+        padding-bottom: 10px;
+        align-items: center; 
+        margin-bottom: 80px;
+        
+        @media (min-width: 1200px) { /*Närvi kommer över en 1200px så vill vi: */
+          justify-content: space-between; /*ha en space between så att sociala medier knapparna hamnar längst ut */
+        }
+
+        .contact-information {
+          display: none;
+          align-items: center;
+
+          @media (min-width: 1200px) { 
+            display: flex; 
+            justify-content: space-between; 
+          }
+
+          .content-box {
+            padding-right: 30px; 
+            margin-right: 30px;
+            border-right: 1px solid #DAD9D3; 
+            font-family: 'Inter', sans-serif;
+            font-size: 15px; 
+            font-weight: 300; 
+
+            i {
+              margin-right: 5px;
+              font-size: 1.2em;/*när man skriver "1em" så betyder det
+              att ge mig samma storlek som min parent, vilket blir 15px i detta fallet, skriver
+              man 1.2 så blir det lite större än parentsens storlek osv. */  
+            }
+
+            &.last { /*för att targeta klassen last som
+            är i höjd med de andra klasserna "content-box" så måste du 
+            sätta dit ett "&" */ 
+              border: none; /* nu tar vi bort den sista ram sidan på just denna klassen specifikt */   
+            }
+
+          }
+        }
+
+        .social-media {
+          
+          #linked { /*skapar ett id för att just sista linkedin ikonen ska ligga
+          sida vid sida med borderns slut*/
+          margin-right: 0;
+          }
+
+            a {
+              color: #191919;
+              font-size: 1.3rem; /*Man vill inte ha för små ikoner för att de ska gå att trycka på rem
+              utgår från font sizen i html och body delen, och 1,3 rem betyder att öka upp med 30%
+              från det vi satt i html och body delen vilket är 16 px (tror det betyder det)*/ 
+              margin-right: 10px;
+            
+              &:hover { /*När vi drar med musen över ikonerna så kommer
+              dem att ändra färg. */
+              color: #666666;
+              }
+            }       
+          }         
+        }
+
+        .main-menu {
+          display: flex; 
+          justify-content: space-between; 
+          align-items: center;
+          padding-bottom: 70px; 
+          margin-top: -50px;
+          
+          nav {
+            
+            a {
+              display: inline-block;
+              color: #191919; /*färg på länkarna*/
+              text-decoration: none; /*tar bort linjen under text-länken */
+              margin-right: 35px; /*separerar länkarna ifrån varandra */
+              position: relative;
+              margin-bottom: 20px;
+            }
+
+            @media (min-width: 576px) {
+              
+              a {
+                
+                &.active { /*När den är active så blir den fet stilad */
+                  font-weight: 500;
+                }
+
+                &.active::after,
+                &:hover::after {
+                  content: '';
+                  position: absolute;
+                  font-weight: 500;
+                  height: 2px;
+                  width: 15px;
+                  background-color: #191919;
+                  left: 50%;
+                  bottom: 3px;
+                  transform: translate((calc(50% - 15px))); 
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+
+          .btn-login {
+            padding-top: 10px;
+            padding-left: 30px;
+            border-radius: 30px;
+            width: 135px;
+            height: 50px;
+
+              i {
+                margin: 10px;
+              }
+            }
+          
+      }
+    }
+  }
+
+} 
+          
+.mini-nav-bar {
+  background-color: #F0EFE9;
+  text-align: center;
+  height: 150px;
+  padding-bottom: 50px;
+  
+  .container{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+
+    .thin-line-showcase {
+      display: none;
+
+      @media (min-width: 576px) {
+       position: absolute;
+       z-index: 1;
+       margin-top: 200px;
+       bottom: -60px;
+       left: -358px;
+       display: block;
+      }
+     } 
+   
+    .first-row {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+
+      p {
+        color: #191919;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    .second-row {
+     
+     h1 {
+        font-family: 'DM Sans', sans-serif; 
+        font-weight: 700; 
+        font-size: 45px;
+        color: #191919; 
+      }
+    }
+  }
+}
+
+//main-content
+.main-content {
+  background-color: #F0EFE9;
+  padding-bottom: 60px;
+ 
+  @media (min-width: 576px) {
+    padding-bottom: 0;
+  }
+ 
+  .three-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  
+  
+    .box {
+      border: solid 1px grey;
+      padding: 10px 20px 0px 20px;
+      display: block;
+      background-color: #F0EFE9;
+      border-radius: 10px;
+
+      .img {
+       
+        img {
+        display: flex;
+        justify-content: center;
+          width: 40px;
+          height: 40px;
+          margin-bottom: 10px;
+        }  
+      }
+
+        h4 {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 0px;
+          text-align: start;
+          padding-bottom: 20px;
+        }
+
+        p {
+            display: none;
+        }
+     }
+
+    @media (min-width: 576px) {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 70px 0px 0px 0px;
+      background-color: #ffffff;
+      padding-bottom: 0px;
+
+      .box {
+        border: solid 1.6px rgb(208, 208, 208);
+        padding: 40px 100px 30px 100px;
+        display: flex;
+        position: relative;
+        margin-right: 0px;
+        background-color: #ffffff;
+        border-radius: 0;
+        
+        
+        .img {
+         
+          img {
+            margin-left: -80px;
+            margin-top: -2px;
+            width: 25%;
+            height: 25%;
+            position: absolute;
+            display: block;
+            justify-content: center;
+            margin-bottom: 0px;
+          }   
+        }
+  
+        h4 {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          padding-bottom: 0;
+  
+        }
+  
+        p {
+          display: block;
+          font-family: 'Inter', sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 0.5 ;
+        }
+      }
+    }
+  }
+
+  }
+
+  //big form
+
+  .big-form {
+
+    span {
+      padding-left: 120px;
+      font-size: 0.8em;
+      color: rgb(218, 71, 71);
+      font-weight: 500;
+      display: flex;
+      }
+      
+    
+    .container {
+      background-color: #ffffff;
+      width: 390px;
+      height: 600px;
+      margin-top: 0px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      
+
+      @media (min-width: 576px) {
+        background-color: #F0EFE9;
+        width: 1038px;
+        height: 670px;
+        margin-top: 60px;
+        border-radius: 0px;
+        box-shadow: none;
+      }
+      
+      
+      .title{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: center;
+        
+        @media (min-width: 576px) {
+          padding-top: 40px;
+        }
+
+         h2 {
+          font-family: 'DM Sans', sans-serif;
+           font-size: 35px;
+           font-weight: 700; 
+         }
+      }
+    
+        .form-1 {
+          border-radius: 25px; 
+          padding: 10px 10px 10px 20px; 
+          font-size: 16px; 
+          border: none;
+          background-color: rgb(255, 255, 255);
+          margin: 10px 10px 20px 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          
+          input {
+            border: none;
+            outline: none;
+
+          }
+          #name {
+            padding: 10px 20px 10px 20px;
+    
+          }
+          
+          @media (min-width: 576px) {
+            border-radius: 25px; 
+            padding: 10px 20px 10px 20px; 
+            font-size: 16px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            margin: 10px 100px 0px 100px;
+            box-shadow: none;
+            input {
+              border: none;
+              outline: none;
+            }
+
+          #name {
+            padding: 10px 20px 10px 20px;
+    
+          }
+          }  
+        }
+        
+        
+        .form-2 {
+          border-radius: 25px; 
+          padding: 10px 10px 10px 20px; 
+          font-size: 16px;
+          border: none;
+          background-color: rgb(255, 255, 255);
+          margin: 10px 10px 30px 10px;    
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          
+          input {
+            border: none;
+            outline: none;
+          }
+          #email-2 {
+            
+          }
+          @media (min-width: 576px) {
+            border-radius: 25px; 
+            padding: 10px 20px 10px 20px; 
+            font-size: 16px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            margin: 10px 100px 0px 100px;
+            box-shadow: none;
+            
+            input {
+              border: none;
+              outline: none;
+            }
+           }
+
+        }
+        
+        .form-3 {
+          border-radius: 25px; /* Rundade kanter */
+          padding: 10px 20px 10px 20px; /* Lägg till lite utrymme runt texten */
+          font-size: 16px; /* Ange textstorlek */
+          border: none;
+          background-color: rgb(255, 255, 255);
+          height: 170px;
+          margin-top: 10px;
+          margin: 10px 10px 10px 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Skugga med 10px spridning och 50% opacitet */
+          
+          input {
+            border: none;
+            outline: none;
+          }
+          #message {
+            
+          }
+          
+          @media (min-width: 576px) {
+            border-radius: 25px; /* Rundade kanter */
+            padding: 10px 20px 10px 20px; /* Lägg till lite utrymme runt texten */
+            font-size: 16px; /* Ange textstorlek */
+            border: none;
+            background-color: rgb(255, 255, 255);
+            height: 170px;
+            margin-top: 10px;
+            margin: 10px 100px 0px 100px;
+            box-shadow: none;
+            
+            input {
+              border: none;
+              outline: none;
+            }
+
+          }
+
+
+        }
+        .btn {
+          margin-top: 25px;
+          .btn-send-message {
+            background-color: #F9D783;
+            border: solid 1px #F9D783 ;
+            color: #191919; /*Textens färg */
+            text-decoration: none; /*vi tar bort strecket under texten Login */
+            padding: 12px 20px 12px 20px; /*Här är det som att säga padding-top och bottom:8px, samt padding-top och bottom: 25px */
+            font-weight: 500; /*här får vi tjockare text */
+            font-size: 16px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+            border-radius: 30px;
+            margin-left: 85px;
+
+            i {
+              margin: 8px; /*skapar avstånd mellan ikonen (pilen) och texten */
+              font-size: 0.9em;
+              font-weight: 700;
+            }
+            
+          }
+          @media (min-width: 576px) {
+            margin-top: 25px;
+          .btn-send-message {
+            background-color: #F9D783;
+            border: solid 1px #F9D783 ;
+            color: #191919; /*Textens färg */
+            text-decoration: none; /*vi tar bort strecket under texten Login */
+            padding: 12px 337px 12px 337px; /*Här är det som att säga padding-top och bottom:8px, samt padding-top och bottom: 25px */
+            font-weight: 500; /*här får vi tjockare text */
+            font-size: 16px; /*samma storlek som redan finns, men för att kunna hänvisa till denna från "i" så sätter vi en fontsize. */
+            border-radius: 30px;
+            margin-left: 85px;
+                    
+              &:hover { 
+                background-color: #191919; /*När vi går över med musen så blir bakgrundsfärgen svar */
+                border: 1px solid #191919; /*bordern blir också svart då den var gul innan*/
+                color: #F0EFE9; /* text färgen går över från svart till vit (obs! lite mjukare vit) */
+            
+              }
+            }
+          }
+        }  
+    }
+  }
+
+  .map {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
+    img {
+      max-width: 390px;
+    }
+    
+    @media (min-width: 576px) { 
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+        
+      img {
+        max-width: 100%;
+        overflow: hidden;
+      }
+    } 
+  }
+
+  

@@ -1,0 +1,90 @@
+.right {
+
+    
+    
+    .form-div {
+
+
+    }
+
+    .recent-posts{
+        border: solid 2px #d6cfcf;
+        height: 35rem;
+        width: 20rem;
+        margin: 50px 0px 50px 100px;
+        
+
+        .right-box {
+            margin-top: 20px;
+            
+        }
+        
+        h4 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        margin-left: 20px;
+        font-weight: bold;
+        text-align: start;
+        }
+        
+        p {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #707070;
+        margin-left: 20px;
+        
+        }
+        
+        .no-line {
+            border-bottom:none;
+        }
+
+
+        .gray-line {
+          height: 1px;
+          background-color: gray;
+          opacity: 0.2;
+          width: 80%; /* Justera bredden efter behov */
+          margin-top: 10px;
+          margin-left: 40px;
+          
+          &.no-line {
+            display: none; /* Dölj linjen om .no-line-klassen finns */
+          }
+        }
+
+        
+    }
+
+    .categories{
+        border: solid 2px #d6cfcf;
+        height: 14rem;
+        width: 20rem;
+        margin-left: 100px;
+
+
+            p {
+                margin-left: 20px;
+                line-height: 0.5;
+
+                .first-text {
+                    font-family: 'DM Sans', sans-serif;
+                    font-size: 12px;
+                    font-weight: bold;
+                    
+                }
+        
+                .second-text {
+                    font-family: 'DM Sans', sans-serif;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: gray;
+                }
+            }
+       
+
+
+    }
+
+}

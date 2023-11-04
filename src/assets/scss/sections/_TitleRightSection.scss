@@ -1,0 +1,29 @@
+.right-title {
+margin-left: 20px;
+margin-top: 30px;
+margin-bottom: 10px;
+
+h3  {
+    position: relative;
+    display: inline; /* Sätt rubriken till inline för att linjen ska täcka endast texten */
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0; /* Placera linjen i början av texten */
+      width: 50px; /* Ändra bredden efter behov */
+      height: 2px; /* Ändra höjden efter behov */
+      background-color: black;
+      transform: translateX(0);
+  }
+}
+
+
+}
+
+

@@ -1,0 +1,110 @@
+.black-navigation {
+    background-color: #0E1021;
+    height: 300px;
+    position: relative;
+  
+    .container {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 30px;
+      column-gap: 7px;
+      row-gap: 10px;
+      margin-left: 10px;
+      
+      @media (min-width: 576px) { 
+        margin-left:auto;
+        column-gap: 107px;    
+      }
+  
+  
+      .crito {
+        display: none;
+        
+        @media (min-width: 576px) {
+          display: block;
+          margin-top: -10px;
+          
+          img {
+            padding-bottom: 20px;
+          }
+  
+          p {
+          color: #b9b9b9;
+          }
+        }
+      }
+  
+        .small-titles {
+  
+  
+          .help {
+            margin-left: 5px;
+          }
+  
+          .link {
+            margin-right: -20px;
+            position: absolute;
+          }
+  
+          .company {
+          margin-left: -7px ;
+          }
+  
+          h4{
+            color: #ffffff;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700; 
+            font-size: 14px;
+            padding-bottom: 5px;
+          }
+  
+          a {
+            text-decoration: none;
+            color: #b9b9b9;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px; 
+            font-weight: 500;
+          }
+  
+            @media (min-width:576px) {
+              display: grid;
+              column-gap: 0;
+  
+              .help {
+              margin-left: 0px;
+              }
+  
+              .link {
+                margin-left: 0px;
+                position: static;
+              }
+  
+  
+              h4{
+                font-weight: 700; 
+                font-size: 18px;
+                padding-bottom: 20px;
+              }
+  
+              a {
+                text-decoration: none;
+                font-size: 14px; 
+                font-weight: 500;
+                
+  
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+        
+    .grey-lines {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+      }
+    }
+  
