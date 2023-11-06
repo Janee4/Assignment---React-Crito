@@ -25,14 +25,14 @@ const News_Details = () => {
   
     if (article) {
       const imgStyle = {
-        width: '40%', // Ange önskad bredd
-        height: 'auto', // Håller bildens ursprungliga proportioner
+        width: '40%',
+        height: 'auto',
       };
 
       const paragraphStyle = {
-        color: '#191919', // Använd citattecken för färgkoden
-        fontFamily: 'Inter, sans-serif', // Använd citattecken för typsnittet
-        fontSize: '18px', // Använd citattecken för font size
+        color: '#191919', 
+        fontFamily: 'Inter, sans-serif', 
+        fontSize: '18px', 
         fontWeight: 500,
         margin: '20px',
       };
@@ -47,7 +47,7 @@ const News_Details = () => {
     
 
     return (
-      <div>
+      <div >
         <h2 style={titleStyle}>{article.title}</h2>
         <img src={article.imageUrl} alt={article.title} style={imgStyle} />
         <p style={paragraphStyle}>{article.content} </p>

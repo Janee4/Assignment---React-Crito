@@ -11,6 +11,7 @@
 @import './assets/scss/sections/SearchbarServices';
 @import './assets/scss/sections/ServicesRight';
 @import './assets/scss/sections/TitleRightSection';
+@import './assets//scss/sections/News_details';
 * {
   box-sizing: border-box;
 }
@@ -3009,3 +3010,9 @@ header {
   }
 
   
+.news-details{
+  .title-news{
+    color: red;
+  }
+
+}

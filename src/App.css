@@ -699,6 +699,23 @@
   transform: translateX(0);
 }
 
+.news-details .title-news {
+  font-family: "DM Sans", sans-serif; /*kopierar du under import delen på fonts.google.com */
+  font-weight: 700; /*kolla design mallen och hämta från fonts.google.com */
+  font-size: 45px;
+  color: #191919;
+}
+.news-details .paragraph-news {
+  color: rgb(249, 77, 28);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.news-details .img-news {
+  width: 40%;
+  height: auto;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -3359,4 +3376,8 @@ header .container .menu .main-menu .btn-login i {
     max-width: 100%;
     overflow: hidden;
   }
+}
+
+.news-details .title-news {
+  color: red;
 }

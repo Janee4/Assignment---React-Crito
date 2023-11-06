@@ -113,16 +113,3 @@ const imageSizeStyleThree = { width: '100%', height: '274px' };
   }
   
   export default NewsBody
-
-
-  //   {/* Lägg till denna del för att visa artiklar */}
-  //   <div className="articles-list">
-  //   <h2>Our News & Articles</h2>
-  //   <ul>
-  //     {articles.map((article) => (
-  //       <li key={article.id}>
-  //         <a href={`/news/${article.id}`}>{article.title}</a>
-  //       </li>
-  //     ))}
-  //   </ul>
-  // </div>

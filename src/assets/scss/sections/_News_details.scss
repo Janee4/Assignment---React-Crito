@@ -1,0 +1,40 @@
+
+.news-details {
+    
+    .title-news {
+        font-family: 'DM Sans', sans-serif; /*kopierar du under import delen på fonts.google.com */
+        font-weight: 700; /*kolla design mallen och hämta från fonts.google.com */
+        font-size: 45px;
+        color: #191919;
+    }
+    
+    .paragraph-news {
+        color: rgb(249, 77, 28);
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    
+    .img-news {
+        width: 40%;
+        height: auto;
+    }
+
+}
+
+
+
+//   const paragraphStyle = {
+//     color: '#191919', 
+//     fontFamily: 'Inter, sans-serif', 
+//     fontSize: '18px', 
+//     fontWeight: 500,
+//     margin: '20px',
+//   };
+
+//   const titleStyle = {
+//     fontFamily: 'DM Sans, sans-serif',
+//       fontWeight: 700, 
+//       fontSize: '30px',
+//       color: '#191919', 
+//       margin: '20px',
