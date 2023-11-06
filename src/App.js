@@ -8,6 +8,8 @@ import Home from './components/View/Home' //importera Home så att den kan navig
 import ContactUs from './components/View/ContactUs';
 import News from './components/View/News';
 import Services from './components/View/Services';
+import NewsBody from './components/NewsComponents/NewsBody';
+import News_Details from './components/View/News_Details';
 
 
 const App = () => {
@@ -19,7 +21,7 @@ const App = () => {
           <Route path = '/news' element = {<News/>} />
           <Route path = '/services' element = {<Services/>} />
           <Route path="/news" element={<NewsBody />} />
-        <Route path="/news/:articleId" element={<NewsDetails />} />
+        <Route path="/news/:id" element={<News_Details />} />
       </Routes>
   </BrowserRouter>
   )
