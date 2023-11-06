@@ -18,6 +18,8 @@ const App = () => {
           <Route path = '/contact' element={<ContactUs/>} /> {/*När url är "/contact" så kommer ContactUs komponenten att visas */}
           <Route path = '/news' element = {<News/>} />
           <Route path = '/services' element = {<Services/>} />
+          <Route path="/news" element={<NewsBody />} />
+        <Route path="/news/:articleId" element={<NewsDetails />} />
       </Routes>
   </BrowserRouter>
   )
