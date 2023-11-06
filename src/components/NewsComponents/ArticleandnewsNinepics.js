@@ -1,19 +1,16 @@
 import React from 'react'
 
 
-import yellowRectangle from '../../assets/images/yellow-rectangle.svg'
-
-
-const ArticleandnewsNinepics = ({imageSrc, title, customClass, category}) => {
+const ArticleandnewsNinepics = ({imageSrc, title, customClass, category, isSmaller}) => {
+  const imageSizeStyle = isSmaller ? { width: '100%', height: '293px' } : {};
   return (
     <>
     <div className="text-under-img">
-        <a className="img-api" href=""><img src={imageSrc} alt=""/></a>
+        <a href=""><img src={imageSrc} alt="" style={imageSizeStyle} /></a>
         <p id="business">{category}</p>
         <h4>{title}</h4>
-      </div>
-      <div className={customClass}>
-      </div> 
+    </div>
+    <div className={customClass}></div> 
     </>
   )
 }
