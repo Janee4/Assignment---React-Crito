@@ -3,15 +3,6 @@ import NewsMiniNav from './NewsMiniNav'
 
 
 
-import articleAndNews1 from '../../assets/images/articles-and-news-1.png'
-import articleAndNews2 from '../../assets/images/articles-and-news-2.png'
-import articleAndNews3 from '../../assets/images/articles-and-news-3.png'
-import articleAndNews4 from '../../assets/images/articles-and-news-4.png'
-import articleAndNews5 from '../../assets/images/articles-and-news-5.png'
-import articleAndNews6 from '../../assets/images/articles-and-news-6.png'
-import articleAndNews7 from '../../assets/images/articles-and-news-7.png'
-import articleAndNews8 from '../../assets/images/articles-and-news-8.png'
-import articleAndNews9 from '../../assets/images/articles-and-news-9.png'
 import blackM from '../../assets/images/black-M.svg'
 import blackCritoLogo from '../../assets/images/black-crito-logo.svg'
 import greyLines from '../../assets/images/grey-lines.svg'
@@ -32,12 +23,14 @@ const NewsBody = () => {
       .then((data) => setArticles(data));
   }, []);
   
-  
+  const imageSizeStyleZero = { width: '100%', height: '293px' };
+const imageSizeStyleTwo = { width: '100%', height: '293px' };
+const imageSizeStyleThree = { width: '100%', height: '274px' };
   
     return (
       <>
   
-      <NewsMiniNav navPieceOne="Home" navPieceTwo="News" title="News & Articles"/>
+  <NewsMiniNav navPieceOne="Home" navPieceTwo="News" title="News & Articles"/>
       <section className="article-and-news-9">
       <div className="container">
       <div className="title-container">
@@ -52,7 +45,15 @@ const NewsBody = () => {
       <ArticleandnewsNinepics
         title={article.title}
         imageSrc={article.imageUrl}
-        isSmaller={index === 2}
+        customImageZero={index === 0}
+      customImageTwo={index === 2}
+      customImageThree={index === 3}
+      imageSizeStyle={
+        index === 0 ? imageSizeStyleZero :
+        index === 2 ? imageSizeStyleTwo :
+        index === 3 ? imageSizeStyleThree :
+        {}
+      }
       />
       <p>{article.content}</p> {/* Visa artikelinnehåll */}
       <a href={`/news/${article.id}`}>Visa mer</a> {/* Länk till artikelens detaljer */}
