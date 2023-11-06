@@ -23,7 +23,7 @@ const NewsBody = () => {
       .then((data) => setArticles(data));
   }, []);
   
-  const imageSizeStyleZero = { width: '100%', height: '293px' };
+ const imageSizeStyleZero = { width: '100%', height: '293px' };
 const imageSizeStyleTwo = { width: '100%', height: '293px' };
 const imageSizeStyleThree = { width: '100%', height: '274px' };
   

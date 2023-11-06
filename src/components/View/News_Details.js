@@ -24,16 +24,38 @@ const News_Details = () => {
     }, [id]);
   
     if (article) {
-      return (
-        <div>
-          <h2>{article.title}</h2>
-          <img src={article.imageUrl} alt={article.title} />
-          <p>{article.content}</p>
-        </div>
-      );
-    } else {
-      return <div>Loading...</div>;
-    }
-  };
+      const imgStyle = {
+        width: '40%', // Ange önskad bredd
+        height: 'auto', // Håller bildens ursprungliga proportioner
+      };
+
+      const paragraphStyle = {
+        color: '#191919', // Använd citattecken för färgkoden
+        fontFamily: 'Inter, sans-serif', // Använd citattecken för typsnittet
+        fontSize: '18px', // Använd citattecken för font size
+        fontWeight: 500,
+        margin: '20px',
+      };
+
+      const titleStyle = {
+        fontFamily: 'DM Sans, sans-serif',
+          fontWeight: 700, 
+          fontSize: '30px',
+          color: '#191919', 
+          margin: '20px',
+      };
+    
+
+    return (
+      <div>
+        <h2 style={titleStyle}>{article.title}</h2>
+        <img src={article.imageUrl} alt={article.title} style={imgStyle} />
+        <p style={paragraphStyle}>{article.content} </p>
+      </div>
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
+};
   
   export default News_Details;
