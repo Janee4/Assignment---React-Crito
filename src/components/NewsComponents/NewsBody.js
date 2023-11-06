@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import NewsMiniNav from './NewsMiniNav'
 
 
@@ -21,6 +21,19 @@ import BlacknavigationNews from './BlacknavigationNews'
 import FooterSection from '../FooterSection'
 
 const NewsBody = () => {
+
+// Skapa en tillståndsvariabel för artiklar
+const [articles, setArticles] = useState([]);
+
+// Använd useEffect för att hämta data från API:et när komponenten renderas
+useEffect(() => {
+  fetch('https://win23-assignment.azurewebsites.net/api/articles')
+    .then((response) => response.json())
+    .then((data) => setArticles(data));
+}, []);
+
+
+
   return (
     <>
 
@@ -43,6 +56,20 @@ const NewsBody = () => {
     <ArticleandnewsNinepics title="Apple Has Released New Products. Are They Any Good?" imageSrc={articleAndNews8} customClass="yellow-rectangle-1" dateClassName="mars-25"day="25" month="Mar" />
     <ArticleandnewsNinepics title="How To Improve Your Teams And Get A Better Result" imageSrc={articleAndNews9} customClass="yellow-rectangle-1" dateClassName="mars-25"day="25" month="Mar" />
     </div>
+
+{/* Lägg till denna del för att visa artiklar */}
+<div className="articles-list">
+        <h2>Our News & Articles</h2>
+        <ul>
+          {articles.map((article) => (
+            <li key={article.id}>
+              <a href={`/news/${article.id}`}>{article.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+
     
     <div className="number-container">
       <div className="arrows">{<i class="fa-solid fa-angle-left"></i>}</div>
