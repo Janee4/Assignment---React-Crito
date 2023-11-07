@@ -21,7 +21,7 @@ const App = () => {
           <Route path = '/news' element = {<News/>} />
           <Route path = '/services' element = {<Services/>} />
           <Route path="/news" element={<NewsBody />} />
-        <Route path="/news/:id" element={<News_Details />} />
+        <Route path="/news/:id" element={<News_Details />} /> {/*med /:id så talar vi om att vi har en parameter som heter id */}
       </Routes>
   </BrowserRouter>
   )
