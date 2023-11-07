@@ -59,10 +59,10 @@ const ContactBigform = () => {
     if (name && email && message && validateEmail(email)) {
       // Alla fälten är ifyllda, så skicka förfrågan
       fetch('https://win23-assignment.azurewebsites.net/api/contactform', { //en funktion som gör att man kan skicka informationen till en URL
-        method: 'POST',
+        method: 'POST', //Vilken metod som ska användas (metoden på formuläret spelar ingen roll, det är denna som styr !) 
         body: JSON.stringify({ name, email, message }), //Här omvandlas vårt javascripts objekt(vår data) till en JSON-sträng 
         headers: {
-          'Content-Type': 'application/json', //Hur ska den läsa datan? Här har vi skrivit att den ska läsa informationen som "application/json"
+          'Content-Type': 'application/json', //Talar om för motparten hur den ska tolka informationen som skickas till den ? Här har vi skrivit att den ska läsa informationen som "application/json"
         },
       })
       .then(response => { //Efter att vi skickat iväg formuläret så ska något skickas tillbaka till oss och beroende på vad vi får för svar så kan vi göra olika saker
@@ -73,8 +73,8 @@ const ContactBigform = () => {
           console.error('Request failed ' + response.status);
         }
         })
-        .then(data => {
-          console.log(data);
+        .then(data => { //Här vill vi göra ännu fler grejer med informationen vi får tex: 
+          console.log(data); //Vi vill console.log vår data 
         })
         .catch(error => {
           console.error('Something went wrong!');
