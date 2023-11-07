@@ -18,14 +18,17 @@ const NewsBody = () => {
   
   // Använd useEffect för att hämta data från API:et när komponenten renderas
   useEffect(() => {
-    fetch('https://win23-assignment.azurewebsites.net/api/articles')
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
+   getArticles()
   }, []);
   
  const imageSizeStyleZero = { width: '100%', height: '293px' };
 const imageSizeStyleTwo = { width: '100%', height: '293px' };
 const imageSizeStyleThree = { width: '100%', height: '274px' };
+
+const getArticles = async () => {
+  const result = await fetch ('https://win23-assignment.azurewebsites.net/api/articles')
+  setArticles (await result.json())
+}
   
     return (
       <>
