@@ -14,7 +14,7 @@ import FooterSection from '../FooterSection'
 const NewsBody = () => {
 
   // Skapa en tillståndsvariabel för artiklar
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([]);// en tom array för att vi vill ha en lista (på artiklar i vårt fall)
   
   // Använd useEffect för att hämta data från API:et när komponenten renderas
   useEffect(() => {
@@ -40,14 +40,14 @@ const imageSizeStyleThree = { width: '100%', height: '274px' };
       </div>
       <div className="how-to-section">
 
-      {articles.map((article, index) => (
-    <div key={index}>
+      {articles.map((article, index) => ( // article skriver vi för vi vill hämta ut article i vår useState där standardvärdet är en tom lista []..
+    <div key={index}> {/*index är det unika ID:t för varje artikel */}
       <ArticleandnewsNinepics
-        title={article.title}
+        title={article.title} //Här skriver vi in artikelns titel (gå in på WEB API:et så hittar du de specifika namnet på egenskaperna som du sedan hänvisar till här.)
         imageSrc={article.imageUrl}
-        customImageZero={index === 0}
-      customImageTwo={index === 2}
-      customImageThree={index === 3}
+        customImageZero={index === 0} //Specifik css styling på artikel 1
+      customImageTwo={index === 2}//Specifik css styling på artikel 3
+      customImageThree={index === 3}//Specifik css styling på artikel 4 
       imageSizeStyle={
         index === 0 ? imageSizeStyleZero :
         index === 2 ? imageSizeStyleTwo :
@@ -55,7 +55,7 @@ const imageSizeStyleThree = { width: '100%', height: '274px' };
         {}
       }
       />
-      <p>{article.content}</p> {/* Visa artikelinnehåll */}
+      <p>{article.content}</p> {/* Visa artikelinnehåll (texten under bilden) */}
       <a href={`/news/${article.id}`}>Visa mer</a> {/* Länk till artikelens detaljer */}
     </div>
   ))}
