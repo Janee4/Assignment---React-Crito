@@ -16,8 +16,8 @@ const NewsBody = () => {
   // Skapa en tillståndsvariabel för artiklar
   const [articles, setArticles] = useState([]);// en tom array för att vi vill ha en lista (på artiklar i vårt fall)
   
-  // Använd useEffect för att hämta data från API:et när komponenten renderas
-  useEffect(() => {
+  // Använd useEffect för att hämta data från API:et när komponenten renderas med hjälp av getArticles funktionen
+  useEffect(() => { 
    getArticles()
   }, []);
   
@@ -25,11 +25,13 @@ const NewsBody = () => {
 const imageSizeStyleTwo = { width: '100%', height: '293px' };
 const imageSizeStyleThree = { width: '100%', height: '274px' };
 
-const getArticles = async () => {
-  const result = await fetch ('https://win23-assignment.azurewebsites.net/api/articles')
-  setArticles (await result.json())
+const getArticles = async () => { //skapa en asynkron funktion som hämtar artiklarna och sparar dem (svaret) inom en variabel som kallas för result (se nedan)
+  const result = await fetch ('https://win23-assignment.azurewebsites.net/api/articles') //sparar svaret/artiklarna i variabeln "result"
+  setArticles (await result.json()) {/* här konverterar vi svaret till JSON-format (med hjälp av result.json) 
+  och ber javaScript att vänta (genom await) på att result.json ska slutföras innan vi går vidare med resten av koden. 
+  När det är klart så uppdaterar sidan efter det som hämtats (artiklarna). 
 }
-  
+*/}/
     return (
       <>
   
