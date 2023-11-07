@@ -27,11 +27,12 @@ const imageSizeStyleThree = { width: '100%', height: '274px' };
 
 const getArticles = async () => { //skapa en asynkron funktion som hämtar artiklarna och sparar dem (svaret) inom en variabel som kallas för result (se nedan)
   const result = await fetch ('https://win23-assignment.azurewebsites.net/api/articles') //sparar svaret/artiklarna i variabeln "result"
-  setArticles (await result.json()) {/* här konverterar vi svaret till JSON-format (med hjälp av result.json) 
-  och ber javaScript att vänta (genom await) på att result.json ska slutföras innan vi går vidare med resten av koden. 
-  När det är klart så uppdaterar sidan efter det som hämtats (artiklarna). 
-}
-*/}/
+  setArticles (await result.json());  {/*här konverterar vi svaret till JSON-format (med hjälp av result.json)
+  och ber javaScript att vänta (genom await) på att result.json ska slutföras innan vi går vidare med resten av koden.
+  När det är klart så uppdaterar sidan efter det som hämtats (artiklarna).
+*/}
+  } 
+  
     return (
       <>
   
