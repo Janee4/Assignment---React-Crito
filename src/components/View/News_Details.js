@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const News_Details = () => {
-    const { id } = useParams();
+    const { id } = useParams(); //Vi använder useParams för att hämta detaljer om de olika artiklarna som har specifika id:n på sig. 
     const [article, setArticle] = useState(null);
   
     useEffect(() => {

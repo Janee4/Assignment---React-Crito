@@ -1968,18 +1968,27 @@ header {
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 31px;
         margin-top: 30px;
+    
+       
         }
 
       .text-under-img {
-
+      
+        .article-link {
+          color: black;
+          text-decoration: none;
+        }
         #business {
           display: none;
         }
        
         a {
+          color: black; /* Ändra länkfärgen till svart */
+          text-decoration: none; /* Ta bort linjen under länkarna */
           img {
             height: 100%;
             width: 100%;
+            
           }
         }
     
@@ -1997,10 +2006,12 @@ header {
           font-size: 21px;
           color: #191919;
           margin-top: 15px;
+          
         }
 
         @media (min-width: 576px) { 
           position: relative;
+
           #business {
             display: block;
             color: #191919;
@@ -2008,15 +2019,19 @@ header {
             font-size: 16px;
             font-weight: 500;
             margin-top: 26px;
+            
           }
 
           p {
             font-size: 16px;  
+            
           }
       
           h4 {
             font-size: 22px;
             margin-top: 29px;
+            
+            
           }
         }
       }
