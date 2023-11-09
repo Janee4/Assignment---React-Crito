@@ -1,13 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
-import articleAndNews1 from '../assets/images/articles-and-news-1.png'
-import articleAndNews2 from '../assets/images/articles-and-news-2.png'
-import articleAndNews3 from '../assets/images/articles-and-news-3.png'
-import ArticleandnewsBox from './ArticleandnewsBox'
+import ArticleandnewsNinepics from './NewsComponents/ArticleandnewsNinepics'
+import { useNews } from '../contexts/NewsContext';
 
 
 const ArticleandnewsSection = () => {
+  const {articles} = useNews()
+
+  const imageSizeStyleZero = { width: '100%', height: '293px' };
+  const imageSizeStyleTwo = { width: '100%', height: '293px' };
+  const imageSizeStyleThree = { width: '100%', height: '274px' };
+
   return (
     <section className="article-and-news-9">
   <div className="container">
@@ -21,9 +26,28 @@ const ArticleandnewsSection = () => {
       </div>
     </div>
     <div className="how-to-section">
-    <ArticleandnewsBox title="How To Use Digitalization In The Classroom" imageSrc={articleAndNews1} customClass="yellow-rectangle-3" dateClassName="mars-13" day="13" month="Mar" />
-    <ArticleandnewsBox title="How To Implement Chat GPT In Your Projects"  imageSrc={articleAndNews2} customClass="yellow-rectangle-2" dateClassName="mars-17" day="17" month="Mar" />
-    <ArticleandnewsBox title="The Guide To Support Modern CSS Design" imageSrc={articleAndNews3} customClass="yellow-rectangle-1" dateClassName="mars-25"day="25" month="Mar"/>
+    {articles.slice(0, 3).map((article, id) => ( // article skriver vi för vi vill hämta ut article i vår useState där standardvärdet är en tom lista []..
+   
+   <Link key={article.id} to={`/news/${article.id}`}> {/*index är det unika ID:t för varje artikel */}
+     <ArticleandnewsNinepics
+       title={article.title} //Här skriver vi in artikelns titel (gå in på WEB API:et så hittar du de specifika namnet på egenskaperna som du sedan hänvisar till här.)
+       imageSrc={article.imageUrl}
+       category={article.category}
+       customImageZero={id === 0} //Specifik css styling på artikel 1
+     customImageTwo={id === 2}//Specifik css styling på artikel 3
+     customImageThree={id === 3}//Specifik css styling på artikel 4
+     imageSizeStyle={
+       id === 0 ? imageSizeStyleZero :
+       id === 2 ? imageSizeStyleTwo :
+       id === 3 ? imageSizeStyleThree :
+       {}
+     }
+     />
+     <p>{article.content}</p> {/* Visa artikelinnehåll (texten under bilden) */}
+     {/* <a href={`/news/${article.id}`}>Visa mer</a> Länk till artikelens detaljer */}
+   </Link>
+ ))}
+ 
       </div>
     <div className="circles">
       <div className="circle-1"></div>

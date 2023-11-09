@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import NewsMiniNav from './NewsMiniNav'
 import { Link } from 'react-router-dom';
 
@@ -14,11 +13,11 @@ import FooterSection from '../FooterSection'
 import { useNews } from '../../contexts/NewsContext';
 
 const NewsBody = () => {
-const {articles} = useNews() // Här säger vi vad det är vi vill hämta, och det är artiklarna i vårt fall. 
+  const {articles} = useNews() // Här säger vi vad det är vi vill hämta, och det är artiklarna i vårt fall. 
 
- const imageSizeStyleZero = { width: '100%', height: '293px' };
-const imageSizeStyleTwo = { width: '100%', height: '293px' };
-const imageSizeStyleThree = { width: '100%', height: '274px' };
+  const imageSizeStyleZero = { width: '100%', height: '293px' };
+  const imageSizeStyleTwo = { width: '100%', height: '293px' };
+  const imageSizeStyleThree = { width: '100%', height: '274px' };
 
 
   
