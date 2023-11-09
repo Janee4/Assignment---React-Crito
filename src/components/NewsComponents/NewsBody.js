@@ -11,28 +11,16 @@ import ArticleandnewsNinepics from './ArticleandnewsNinepics'
 import OverblacknavSectionNews from './OverblacknavSectionNews'
 import BlacknavigationNews from './BlacknavigationNews'
 import FooterSection from '../FooterSection'
+import { useNews } from '../../contexts/NewsContext';
 
 const NewsBody = () => {
+const {articles} = useNews() // Här säger vi vad det är vi vill hämta, och det är artiklarna i vårt fall. 
 
-  // Skapa en tillståndsvariabel för artiklar
-  const [articles, setArticles] = useState([]);// en tom array för att vi vill ha en lista (på artiklar i vårt fall)
-  
-  // Använd useEffect för att hämta data från API:et när komponenten renderas med hjälp av getArticles funktionen
-  useEffect(() => { 
-   getArticles()
-  }, []);
-  
  const imageSizeStyleZero = { width: '100%', height: '293px' };
 const imageSizeStyleTwo = { width: '100%', height: '293px' };
 const imageSizeStyleThree = { width: '100%', height: '274px' };
 
-const getArticles = async () => { //skapa en asynkron funktion som hämtar artiklarna och sparar dem (svaret) inom en variabel som kallas för result (se nedan)
-  const result = await fetch ('https://win23-assignment.azurewebsites.net/api/articles') //sparar svaret/artiklarna i variabeln "result"
-  setArticles (await result.json());  {/*här konverterar vi svaret till JSON-format (med hjälp av result.json)
-  och ber javaScript att vänta (genom await) på att result.json ska slutföras innan vi går vidare med resten av koden.
-  När det är klart så uppdaterar sidan efter det som hämtats (artiklarna).
-*/}
-  } 
+
   
     return (
       <>
@@ -46,28 +34,27 @@ const getArticles = async () => { //skapa en asynkron funktion som hämtar artik
         </div>
       </div>
       <div className="how-to-section">
-
       {articles.map((article, id) => ( // article skriver vi för vi vill hämta ut article i vår useState där standardvärdet är en tom lista []..
-    
-    <Link key={article.id} to={`/news/${article.id}`}> {/*index är det unika ID:t för varje artikel */}
-      <ArticleandnewsNinepics
-        title={article.title} //Här skriver vi in artikelns titel (gå in på WEB API:et så hittar du de specifika namnet på egenskaperna som du sedan hänvisar till här.)
-        imageSrc={article.imageUrl}
-        category={article.category}
-        customImageZero={id === 0} //Specifik css styling på artikel 1
-      customImageTwo={id === 2}//Specifik css styling på artikel 3
-      customImageThree={id === 3}//Specifik css styling på artikel 4 
-      imageSizeStyle={
-        id === 0 ? imageSizeStyleZero :
-        id === 2 ? imageSizeStyleTwo :
-        id === 3 ? imageSizeStyleThree :
-        {}
-      }
-      />
-      <p>{article.content}</p> {/* Visa artikelinnehåll (texten under bilden) */}
-      {/* <a href={`/news/${article.id}`}>Visa mer</a> Länk till artikelens detaljer */}
-    </Link>
-  ))}
+   
+   <Link key={article.id} to={`/news/${article.id}`}> {/*index är det unika ID:t för varje artikel */}
+     <ArticleandnewsNinepics
+       title={article.title} //Här skriver vi in artikelns titel (gå in på WEB API:et så hittar du de specifika namnet på egenskaperna som du sedan hänvisar till här.)
+       imageSrc={article.imageUrl}
+       category={article.category}
+       customImageZero={id === 0} //Specifik css styling på artikel 1
+     customImageTwo={id === 2}//Specifik css styling på artikel 3
+     customImageThree={id === 3}//Specifik css styling på artikel 4
+     imageSizeStyle={
+       id === 0 ? imageSizeStyleZero :
+       id === 2 ? imageSizeStyleTwo :
+       id === 3 ? imageSizeStyleThree :
+       {}
+     }
+     />
+     <p>{article.content}</p> {/* Visa artikelinnehåll (texten under bilden) */}
+     {/* <a href={`/news/${article.id}`}>Visa mer</a> Länk till artikelens detaljer */}
+   </Link>
+ ))}
 
       
       </div>
