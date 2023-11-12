@@ -2471,6 +2471,7 @@ header .container .menu .main-menu .btn-login i {
 @media (min-width: 576px) {
   .article-and-news-9 .container .title-container .btn-class .btn-transparent {
     display: block;
+    margin-top: 190px;
   }
 }
 .article-and-news-9 .container .how-to-section {
@@ -2624,7 +2625,7 @@ header .container .menu .main-menu .btn-login i {
     grid-gap: 15px; /* Avstånd mellan cirklarna */
     justify-content: center;
     margin-top: 50px;
-    margin-bottom: 70px;
+    padding-bottom: 50px;
   }
   .article-and-news-9 .container .circles .circle {
     width: 10px;

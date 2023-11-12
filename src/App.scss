@@ -1948,7 +1948,8 @@ header {
           display: none;
           
           @media (min-width: 576px) {
-            display: block;  
+            display: block;
+            margin-top: 190px; 
           }
         }
       
@@ -2134,7 +2135,7 @@ header {
         grid-gap: 15px; /* Avstånd mellan cirklarna */
         justify-content: center;
         margin-top: 50px;
-        margin-bottom: 70px;
+        padding-bottom: 50px;
           
         .circle {
           width: 10px;
