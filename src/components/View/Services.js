@@ -4,6 +4,7 @@ import FooterSection from '../FooterSection';
 import BlacknavigationSection from '../BlacknavigationSection';
 import ServicesBody from '../ServiceComponents.js/ServicesBody';
 import NewsMiniNav from '../NewsComponents/NewsMiniNav';
+import ArticleandnewsSection from '../ArticleandnewsSection';
 
 
 
@@ -16,6 +17,7 @@ const Services = () => {
       <HeaderSection />
       <NewsMiniNav navPieceOne="Home" navPieceTwo="News" title="News & Articles" />
       <ServicesBody />
+      <ArticleandnewsSection backgroundColor="#F0EFE9" />
       <BlacknavigationSection />
       <FooterSection/>
     </div>
