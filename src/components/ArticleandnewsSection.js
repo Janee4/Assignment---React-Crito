@@ -8,6 +8,20 @@ import { useNews } from '../contexts/NewsContext';
 const ArticleandnewsSection = ({backgroundColor}) => {
 const {articles} = useNews()
 
+
+//Väljer dom tre artiklarna i web api:et som vi vill rendera på sidan:
+const desiredArticleIds = [
+  
+  'cc6c2b75-8ee7-4e4e-8a99-66fe89a4b789',
+  '228c829d-4f66-431f-bb20-1b3aed2869b6', 
+  'cb24396b-ae21-4c34-a267-d0cd0600aa6d'
+];
+
+  // Filtrera artiklar baserat på önskade ID:n
+  const filteredArticles = articles.filter((article) => desiredArticleIds.includes(article.id));
+
+
+
 const imageSizeStyleZero = { width: '100%', height: '293px' };
 const imageSizeStyleTwo = { width: '100%', height: '293px' };
 
@@ -24,7 +38,7 @@ const imageSizeStyleTwo = { width: '100%', height: '293px' };
       </div>
     </div>
     <div className="how-to-section">
-      {articles.slice(0, 3).map((article, id) => ( // article skriver vi för vi vill hämta ut article i vår useState där standardvärdet är en tom lista []..
+      {filteredArticles.map((article, id) => ( // article skriver vi för vi vill hämta ut article i vår useState där standardvärdet är en tom lista []..
    
       <Link key={article.id} to={`/news/${article.id}`}> {/*index är det unika ID:t för varje artikel */}
         <ArticleandnewsNinepics
