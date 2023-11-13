@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import HeaderSection from '../HeaderSection';
 import BlacknavigationNews from '../NewsComponents/BlacknavigationNews';
 import FooterSection from '../FooterSection';
-import NavSectionContainer from '../NavSectionContainer';
 import NewsMiniNav from '../NewsComponents/NewsMiniNav';
 import blackCritoLogo from '../../assets/images/black-crito-logo.svg'
+import InfoParagraph from '../ServiceComponents.js/InfoParagraph';
 
 const News_Details = () => {
     const { id } = useParams(); //Vi använder useParams för att hämta detaljer om de olika artiklarna som har specifika id:n på sig. 
@@ -34,15 +34,21 @@ const News_Details = () => {
     
 
     return (
+      <>
+    <HeaderSection />
+      <NewsMiniNav navPieceOne="Home" navPieceTwo="News" title="News & Articles"/>
       <div className="news-details-div">
-       <HeaderSection />
-       <NewsMiniNav navPieceOne="Home" navPieceTwo="News" title="News & Articles"/>
+      
         <h3> {article.title}</h3>
-        <p>{article.author}</p>
-        <p>{article.published}</p>
+        <div className="under-title-div">
+        <InfoParagraph description={article.author} showYellowCircle={true}/>
+        <InfoParagraph description={article.published} showYellowCircle={true}/>
+        </div>
         <img src={article.imageUrl} alt={article.title} />
         <p> {article.content}</p>
-        
+       
+      </div>
+      
       <section className="black-navigation">
         <div className="container">
           <div className="crito">
@@ -55,12 +61,9 @@ const News_Details = () => {
             <BlacknavigationNews divName="small-titles link" title="Link" title1="Free eBooks" title2="Development Tutorial" title3="How to -Blog" title4="Youtube Playlist"/>
           </div>
           </section>
+          <FooterSection />
+      </>
       
-        <FooterSection />
-     
-
-        
-      </div>
     );
   } else {
     return <div>Loading...</div>;
