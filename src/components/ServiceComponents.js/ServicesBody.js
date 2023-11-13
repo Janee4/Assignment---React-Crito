@@ -12,12 +12,12 @@ import Categoriesbox from './Categoriesbox'
 
 const ServicesBody = () => {
   return (
-    <div className="news-and-articles">
+   <div className="news-and-articles">
     <div className="container">
       <div className="left">
       <h3>How To Use Digitalization <br/>In The Classroom</h3>
-      <div className="under-title-div">
-        <InfoParagraph description="Mar 25, 2023" showYellowCircle={true}/>
+        <div className="under-title-div">
+          <InfoParagraph description="Mar 25, 2023" showYellowCircle={true}/>
           <InfoParagraph description="Business"showYellowCircle={true} />
           <InfoParagraph description="Kimberly Hansen" showYellowCircle={false}/>
         </div>

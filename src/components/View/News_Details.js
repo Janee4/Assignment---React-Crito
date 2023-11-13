@@ -10,7 +10,7 @@ import RightSectionBoxes from '../ServiceComponents.js/RightSectionBoxes';
 import Categoriesbox from '../ServiceComponents.js/Categoriesbox';
 import BlacknavigationSection from '../BlacknavigationSection';
 import FooterSection from '../FooterSection';
-
+import ArticleandnewsSection from '../ArticleandnewsSection';
 
 const News_Details = () => {
     const { id } = useParams(); //Vi använder useParams för att hämta detaljer om de olika artiklarna som har specifika id:n på sig. 
@@ -98,14 +98,18 @@ const News_Details = () => {
 
           </div>
           
-
+         
       
       </div>
+      
 
     </div>
-    <BlacknavigationSection />
+    
+   
 
    </div>
+   <ArticleandnewsSection backgroundColor="#F0EFE9" />
+   <BlacknavigationSection />
    <FooterSection />
       
       {/* <div className="news-details-div">
