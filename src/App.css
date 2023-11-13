@@ -716,6 +716,27 @@
   height: auto;
 }
 
+.news-details-div h3 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  padding-top: 85px;
+  padding-bottom: 16px;
+  text-align: left;
+  margin-left: 280px;
+}
+.news-details-div img {
+  width: 40%;
+  height: auto;
+  margin-left: 280px;
+}
+.news-details-div p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  margin-left: 280px;
+}
+
 * {
   box-sizing: border-box;
 }
