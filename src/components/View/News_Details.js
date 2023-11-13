@@ -46,10 +46,11 @@ const News_Details = () => {
       <div className="news-and-articles">
     <div className="container">
       <div className="left">
-      <h3>How To Use Digitalization <br/>In The Classroom</h3>
+      <h3>{article.title}</h3>
       <div className="under-title-div">
       <InfoParagraph description={article.author} showYellowCircle={true}/>
       <InfoParagraph description={article.published} showYellowCircle={true}/>
+      <InfoParagraph description={article.category} showYellowCircle={false}/>
         </div>
         <img src={article.imageUrl}/>
         <div className="paragraph-div">

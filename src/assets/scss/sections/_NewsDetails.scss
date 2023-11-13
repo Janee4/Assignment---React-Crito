@@ -9,7 +9,7 @@
         margin-bottom: 50px;
 
         .grey-buttons-div {
-            margin-top: 170px;
+            margin-top: 150px;
         }
 
         img {
@@ -21,7 +21,7 @@
         h3 {
           color: #191919;
           font-family: 'DM Sans', sans-serif;
-          font-size: 22px;
+          font-size: 30px;
           font-weight: 700;
           padding-top: 85px;
           padding-bottom: 16px;
@@ -33,9 +33,10 @@
           .paragraph-under-title {
             display: flex;
             justify-content:start;
+            margin-top: 0px;
             p {
               font-family: 'DM Sans', sans-serif;
-              font-size: 15px;
+              font-size: 16px;
             
             }
             .yellow-circle {
@@ -61,7 +62,7 @@
           margin-top: 30px;
           p {
             font-family: 'Inter', sans-serif; //textsnitt
-              font-size: 15px; 
+              font-size: 18px; 
               font-weight: 400;
               color: #3f3e3e;
               margin-top: 25px; 
@@ -225,3 +226,60 @@
     
 
 }
+
+.right {
+  
+    .form-div {
+  
+    .search-bar {
+      border-radius: 25px;
+     margin: 220px 10px 0px 100px;
+      
+  
+      input {
+        text-align: center;
+        font-size: 5px;
+        outline: none;
+        background-color: #F0EFE9;
+        border: none;
+      }
+  
+      #email {
+        border-radius: 30px; /* Rundade kanter */
+        font-size: 16px; /* Ange textstorlek */
+        padding: 14px 65px 14px 50px; /* Lägg till lite utrymme runt texten */
+        
+      }
+  
+      #email::placeholder {
+        color: rgb(129, 129, 129); /* Grå färg för plachållartexten */
+        font-size: 17px;
+        padding-right: 100px;
+      }  
+    }
+  }
+      
+  
+    }
+  
+    .input-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    
+      i.fa-magnifying-glass {
+        position: absolute;
+        left: 20px; /* Justera vänsterpositionen för ikonen efter behov */
+        pointer-events: none; /* Förhindra att ikonen interagerar med användaren */
+      }
+    
+      input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 10px; /* Justera högerplatsen för att ge utrymme för ikonen */
+       
+      } 
+    
+    }
+    

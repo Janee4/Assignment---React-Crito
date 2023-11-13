@@ -567,7 +567,7 @@
   font-size: 14px;
   border-radius: 30px;
   padding: 3px 15px 0px 10px;
-  margin-top: 50px;
+  margin-top: px;
   margin-right: 12px;
   text-align: center;
   padding: 10px 30px;
@@ -728,7 +728,7 @@
   margin-bottom: 50px;
 }
 .news-and-articles .container .left .grey-buttons-div {
-  margin-top: 170px;
+  margin-top: 150px;
 }
 .news-and-articles .container .left img {
   width: 100%;
@@ -737,7 +737,7 @@
 .news-and-articles .container .left h3 {
   color: #191919;
   font-family: "DM Sans", sans-serif;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 700;
   padding-top: 85px;
   padding-bottom: 16px;
@@ -749,10 +749,11 @@
 .news-and-articles .container .left .under-title-div .paragraph-under-title {
   display: flex;
   justify-content: start;
+  margin-top: 0px;
 }
 .news-and-articles .container .left .under-title-div .paragraph-under-title p {
   font-family: "DM Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
 }
 .news-and-articles .container .left .under-title-div .paragraph-under-title .yellow-circle {
   width: 8px;
@@ -772,7 +773,7 @@
 }
 .news-and-articles .container .left .paragraph-div p {
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   color: #3f3e3e;
   margin-top: 25px;
@@ -877,6 +878,50 @@
   background-color: #535252;
   border: 1px solid #424242;
   color: #F0EFE9;
+}
+
+.right .form-div .search-bar {
+  border-radius: 25px;
+  margin: 220px 10px 0px 100px;
+}
+.right .form-div .search-bar input {
+  text-align: center;
+  font-size: 5px;
+  outline: none;
+  background-color: #F0EFE9;
+  border: none;
+}
+.right .form-div .search-bar #email {
+  border-radius: 30px; /* Rundade kanter */
+  font-size: 16px; /* Ange textstorlek */
+  padding: 14px 65px 14px 50px; /* Lägg till lite utrymme runt texten */
+}
+.right .form-div .search-bar #email::-moz-placeholder {
+  color: rgb(129, 129, 129); /* Grå färg för plachållartexten */
+  font-size: 17px;
+  padding-right: 100px;
+}
+.right .form-div .search-bar #email::placeholder {
+  color: rgb(129, 129, 129); /* Grå färg för plachållartexten */
+  font-size: 17px;
+  padding-right: 100px;
+}
+
+.input-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.input-container i.fa-magnifying-glass {
+  position: absolute;
+  left: 20px; /* Justera vänsterpositionen för ikonen efter behov */
+  pointer-events: none; /* Förhindra att ikonen interagerar med användaren */
+}
+.input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px; /* Justera högerplatsen för att ge utrymme för ikonen */
 }
 
 * {
