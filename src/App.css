@@ -551,6 +551,11 @@
   color: #707070;
   margin-bottom: 50px;
 }
+.news-and-articles .img-paragraph-div .img-url {
+  width: 40%;
+  height: auto;
+  margin-left: 280px;
+}
 
 .grey-btn {
   background-color: rgba(37, 37, 37, 0.0509803922);
@@ -716,7 +721,20 @@
   height: auto;
 }
 
-.news-details-div h3 {
+.news-and-articles .container {
+  display: flex;
+}
+.news-and-articles .container .left {
+  margin-bottom: 50px;
+}
+.news-and-articles .container .left .grey-buttons-div {
+  margin-top: 170px;
+}
+.news-and-articles .container .left img {
+  width: 100%;
+  height: auto;
+}
+.news-and-articles .container .left h3 {
   color: #191919;
   font-family: "DM Sans", sans-serif;
   font-size: 22px;
@@ -724,17 +742,141 @@
   padding-top: 85px;
   padding-bottom: 16px;
   text-align: left;
-  margin-left: 280px;
 }
-.news-details-div img {
-  width: 40%;
-  height: auto;
-  margin-left: 280px;
+.news-and-articles .container .left .under-title-div {
+  display: flex;
 }
-.news-details-div p {
+.news-and-articles .container .left .under-title-div .paragraph-under-title {
+  display: flex;
+  justify-content: start;
+}
+.news-and-articles .container .left .under-title-div .paragraph-under-title p {
   font-family: "DM Sans", sans-serif;
-  font-size: 18px;
-  margin-left: 280px;
+  font-size: 15px;
+}
+.news-and-articles .container .left .under-title-div .paragraph-under-title .yellow-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #F9D783;
+  margin-right: 12px;
+  margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.news-and-articles .container .left img {
+  margin-top: 50px;
+}
+.news-and-articles .container .left .paragraph-div {
+  margin-top: 30px;
+}
+.news-and-articles .container .left .paragraph-div p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #3f3e3e;
+  margin-top: 25px;
+}
+.news-and-articles .container .left .special-paragraph {
+  display: flex;
+  align-items: center;
+}
+.news-and-articles .container .left .special-paragraph img {
+  margin-bottom: 105px;
+  margin-right: 30px;
+}
+.news-and-articles .container .left .special-paragraph p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  color: black;
+}
+.news-and-articles .container .left .paragraph-six {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #707070;
+  margin-bottom: 50px;
+}
+
+.right .recent-posts {
+  border: solid 2px #d6cfcf;
+  height: 29rem;
+  width: 20rem;
+  margin: 50px 0px 50px 100px;
+}
+.right .recent-posts .right-box {
+  margin-top: 20px;
+}
+.right .recent-posts h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  margin-left: 20px;
+  font-weight: bold;
+  text-align: start;
+}
+.right .recent-posts p {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #707070;
+  margin-left: 20px;
+}
+.right .recent-posts .no-line {
+  border-bottom: none;
+}
+.right .recent-posts .gray-line {
+  height: 1px;
+  background-color: gray;
+  opacity: 0.2;
+  width: 80%; /* Justera bredden efter behov */
+  margin-top: 10px;
+  margin-left: 40px;
+}
+.right .recent-posts .gray-line.no-line {
+  display: none; /* Dölj linjen om .no-line-klassen finns */
+}
+.right .categories {
+  border: solid 2px #d6cfcf;
+  height: 14rem;
+  width: 20rem;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+.right .categories p {
+  margin-left: 20px;
+  line-height: 0.5;
+}
+.right .categories p .first-text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+.right .categories p .second-text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: gray;
+}
+
+.grey-btn {
+  background-color: rgba(37, 37, 37, 0.0509803922);
+  border: solid 1px rgba(44, 44, 44, 0.0509803922);
+  color: black; /*Textens färg */
+  text-decoration: none; /*vi tar bort strecket under texten Login */
+  font-family: "Inter", sans-serif;
+  font-weight: 400; /*här får vi tjockare text */
+  font-size: 14px;
+  border-radius: 30px;
+  padding: 3px 15px 0px 10px;
+  margin-top: 50px;
+  margin-right: 12px;
+  text-align: center;
+  padding: 10px 30px;
+}
+.grey-btn:hover {
+  background-color: #535252;
+  border: 1px solid #424242;
+  color: #F0EFE9;
 }
 
 * {

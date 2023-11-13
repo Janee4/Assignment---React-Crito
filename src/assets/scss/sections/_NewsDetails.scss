@@ -1,25 +1,227 @@
-.news-details-div {
-    h3 {
-        color: #191919;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        padding-top: 85px;
-        padding-bottom: 16px;
-        text-align: left;
-        margin-left: 280px;
-    }
+.news-and-articles{
 
-    img {
-        width: 40%;
-        height: auto;
-        margin-left: 280px;
-    }
+  
+    .container {
+      display: flex;
+      
+      
+      .left {
+        margin-bottom: 50px;
 
-    p {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 18px;
-        margin-left: 280px;
+        .grey-buttons-div {
+            margin-top: 170px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+           
+        }
+  
+        h3 {
+          color: #191919;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 22px;
+          font-weight: 700;
+          padding-top: 85px;
+          padding-bottom: 16px;
+          text-align: left;
+        }
+         
+        .under-title-div {
+          display: flex;
+          .paragraph-under-title {
+            display: flex;
+            justify-content:start;
+            p {
+              font-family: 'DM Sans', sans-serif;
+              font-size: 15px;
+            
+            }
+            .yellow-circle {
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background-color: #F9D783;
+              margin-right: 12px;
+              margin-top: 4px;
+              margin-left: 20px;
+              margin-right: 20px;
+            }
+          }
+        }
+        img {
+          margin-top: 50px;
+          
+        }
+  
+        
+        
+        .paragraph-div {
+          margin-top: 30px;
+          p {
+            font-family: 'Inter', sans-serif; //textsnitt
+              font-size: 15px; 
+              font-weight: 400;
+              color: #3f3e3e;
+              margin-top: 25px; 
+              
+          }
+        }
+        
+        .special-paragraph {
+          display: flex;
+          align-items: center;
+        
+          
+          
+          img {
+            margin-bottom: 105px;
+            margin-right: 30px; 
+            
+          }
+  
+          p {
+            font-family: 'DM Sans', sans-serif;
+              font-size: 20px;
+              color: black;
+            
+          }
+        }
+        
+        .paragraph-six {
+          font-family: 'Inter', sans-serif; //textsnitt
+          font-size: 15px; 
+          font-weight: 400;
+          color: #707070;
+          margin-bottom: 50px;
+          
+        }
+  
     }
+  
+  
+  
+  
+  }
+
+
+
+}
+
+.right {
+
     
+    
+    .form-div {
+
+
+    }
+
+    .recent-posts{
+        border: solid 2px #d6cfcf;
+        height: 29rem;
+        width: 20rem;
+        margin: 50px 0px 50px 100px;
+        
+
+        .right-box {
+            margin-top: 20px;
+            
+        }
+        
+        h4 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+        margin-left: 20px;
+        font-weight: bold;
+        text-align: start;
+        }
+        
+        p {
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        color: #707070;
+        margin-left: 20px;
+        
+        }
+        
+        .no-line {
+            border-bottom:none;
+        }
+
+
+        .gray-line {
+          height: 1px;
+          background-color: gray;
+          opacity: 0.2;
+          width: 80%; /* Justera bredden efter behov */
+          margin-top: 10px;
+          margin-left: 40px;
+          
+          &.no-line {
+            display: none; /* Dölj linjen om .no-line-klassen finns */
+          }
+        }
+
+        
+    }
+
+    .categories{
+        border: solid 2px #d6cfcf;
+        height: 14rem;
+        width: 20rem;
+        margin-left: 100px;
+        margin-bottom: 50px;
+
+
+            p {
+                margin-left: 20px;
+                line-height: 0.5;
+
+                .first-text {
+                    font-family: 'DM Sans', sans-serif;
+                    font-size: 12px;
+                    font-weight: bold;
+                    
+                }
+        
+                .second-text {
+                    font-family: 'DM Sans', sans-serif;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: gray;
+                }
+            }
+       
+
+
+    }
+
+}
+
+//grey button
+.grey-btn {
+    background-color: #2525250d;
+    border: solid 1px #2c2c2c0d;
+    color: black; /*Textens färg */
+    text-decoration: none; /*vi tar bort strecket under texten Login */
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /*här får vi tjockare text */
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 3px 15px 0px 10px;
+    margin-top: 50px;
+    margin-right: 12px;
+    text-align: center;
+    padding: 10px 30px;
+
+      &:hover { 
+      background-color: #535252; 
+      border: 1px solid #424242; 
+      color: #F0EFE9; 
+      }
+    
+
 }

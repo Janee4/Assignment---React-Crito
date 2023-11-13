@@ -1,4 +1,5 @@
 .news-and-articles{
+
   
   .container {
     display: flex;
@@ -41,6 +42,8 @@
       img {
         margin-top: 50px;
       }
+
+      
       
       .paragraph-div {
         margin-top: 40px;
@@ -88,6 +91,13 @@
 
 
 
+}
+.img-paragraph-div {
+  .img-url{
+    width: 40%;
+    height: auto;
+    margin-left: 280px;
+  }
 }
 
 }
