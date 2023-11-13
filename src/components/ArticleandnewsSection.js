@@ -21,8 +21,9 @@ const desiredArticleIds = [
   const filteredArticles = articles.filter((article) => desiredArticleIds.includes(article.id));
 
 
-
+//Justera storlekarna på artiklarna så att alla får önskad storlek 
 const imageSizeStyleZero = { width: '100%', height: '293px' };
+const imageSizeStyleOne = { width: '100%', height: '293px' };
 const imageSizeStyleTwo = { width: '100%', height: '293px' };
 
   return (
@@ -49,6 +50,7 @@ const imageSizeStyleTwo = { width: '100%', height: '293px' };
           customImageTwo={id === 2}//Specifik css styling på artikel 3
           imageSizeStyle={
             id === 0 ? imageSizeStyleZero :
+            id === 1 ? imageSizeStyleOne :
             id === 2 ? imageSizeStyleTwo :
           {}
      }
