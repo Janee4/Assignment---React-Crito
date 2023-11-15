@@ -10,11 +10,11 @@ const ContactBigform = () => {
       message: '',
     },
     validationSchema: Yup.object({ //Gör att man kan koppla på i useFormik delen en validationSchema på hur vi vill att valideringen ska fungera och hanteras (våra felmeddelanden som ska skrivas ut)
-      name: Yup.string()
-        .matches(/^[A-Za-z\s]+$/, 'Invalid name. The name can only contain letters and spaces.')
-        .required('Please enter your name.'),
+      name: Yup.string() //Värdet för detta fältet måste vara i form av en sträng
+        .matches(/^[A-Za-z\s]+$/, 'Invalid name. The name can only contain letters and spaces.') // matchar det användaren skriver in mot regeln som säger att namnet endast måste innehålla stora och små bokstäver samt mellanslag, allt annat än dessa tecken kommer sända ut ett felmeddelande ?
+        .required('Please enter your name.'),//Anger att fältet är obligatoriskt, om användaren inte skriver in något så kommer felmedelandet "please enter your name." att skrivas ut.
       email: Yup.string()
-        .email('Please enter a valid email address.')
+        .email('Please enter a valid email address.') //Om användaren skriver in något som inte ser ut som en giltig e-post adress så kommer felmeddelandet 'Please enter a valid email address.' att skrivas ut
         .required('Please enter your email address.'),
       message: Yup.string()
         .min(10, 'The message must be at least 10 characters long.')
@@ -22,7 +22,7 @@ const ContactBigform = () => {
     }),
     onSubmit: (values) => {
       
-      console.log('Form submitted:', values);
+      console.log('Form submitted:', values); //Här loggas användarens svar i varje fäl till konsollen, det kan vara användbart för att undersöka vilken form av information som skickas när användaren skickar iväg formuläret. 
 
       
       fetch('https://win23-assignment.azurewebsites.net/api/contactform', {//en funktion som gör att man kan skicka informationen till en URL
@@ -58,12 +58,12 @@ const ContactBigform = () => {
 
         <form id='form' onSubmit={formik.handleSubmit}>
           <div className="form-1" id="name">
-            <input
+            <input //När användaren skriver in något i fältet så uppdateras "formik.values.name" automatiskt med det användaren skrivit in
               type="text"
               name="name"
               placeholder="Name*"
               value={formik.values.name}
-              onChange={formik.handleChange}
+              onChange={formik.handleChange}//Varje gång användaren skriver in något kallas händelsehanteraren "handleChange" som är en funktion från Formik-biblioteket som uppdaterar "formik.values.name" med det aktuella värdet som användaren skrivit in
               onBlur={formik.handleBlur}
             />
           </div>
