@@ -40,9 +40,6 @@ const NewsBody = () => {
        title={article.title} //Här skriver vi in artikelns titel (gå in på WEB API:et så hittar du de specifika namnet på egenskaperna som du sedan hänvisar till här.)
        imageSrc={article.imageUrl}
        category={article.category}
-       customImageZero={id === 0} //Specifik css styling på artikel 1
-     customImageTwo={id === 2}//Specifik css styling på artikel 3
-     customImageThree={id === 3}//Specifik css styling på artikel 4
      imageSizeStyle={
        id === 0 ? imageSizeStyleZero :
        id === 2 ? imageSizeStyleTwo :

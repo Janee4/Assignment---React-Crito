@@ -6,7 +6,7 @@ const ArticleandnewsNinepics = ({imageSrc, title, customClass, category, imageSi
   return (
     <>
     <div className="text-under-img">
-        <a href=""><img src={imageSrc} alt="" style={imageSizeStyle} /></a>
+    <a href=""><img src={imageSrc} alt="" style={imageSizeStyle} /></a>
         <p id="business">{category}</p>
         <h4>{title}</h4>
     </div>
